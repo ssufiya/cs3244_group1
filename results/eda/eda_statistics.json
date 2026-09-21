@@ -1,0 +1,756 @@
+{
+  "primary_source": "reddit_sarc_balanced_full.parquet",
+  "primary_rows": 913769,
+  "supplementary_rows": 45780,
+  "primary_label_counts": {
+    "0": 448362,
+    "1": 465407
+  },
+  "primary_sarcastic_rate": 0.5093,
+  "supplementary_balance": {
+    "news_headlines": {
+      "n": 28375,
+      "sarcastic_rate": 0.4751
+    },
+    "figlang_twitter": {
+      "n": 6454,
+      "sarcastic_rate": 0.5126
+    },
+    "figlang_reddit": {
+      "n": 6144,
+      "sarcastic_rate": 0.4992
+    },
+    "tweeteval_irony": {
+      "n": 4583,
+      "sarcastic_rate": 0.4818
+    },
+    "twitter_sarcasm": {
+      "n": 224,
+      "sarcastic_rate": 0.5
+    }
+  },
+  "length_words": {
+    "median": {
+      "0": 9.0,
+      "1": 9.0
+    },
+    "mean": {
+      "0": 11.51,
+      "1": 10.91
+    },
+    "p90": {
+      "0": 22.0,
+      "1": 19.0
+    }
+  },
+  "sarcasm_rate_by_length": {
+    "1-3": {
+      "rate": 0.399,
+      "n": 76725
+    },
+    "4-5": {
+      "rate": 0.4835,
+      "n": 126624
+    },
+    "6-8": {
+      "rate": 0.5414,
+      "n": 203902
+    },
+    "9-12": {
+      "rate": 0.5606,
+      "n": 208992
+    },
+    "13-18": {
+      "rate": 0.5347,
+      "n": 171871
+    },
+    "19-25": {
+      "rate": 0.4698,
+      "n": 79238
+    },
+    "26-40": {
+      "rate": 0.3809,
+      "n": 38971
+    },
+    "40+": {
+      "rate": 0.2745,
+      "n": 7446
+    }
+  },
+  "marker_presence_rates_pct": [
+    {
+      "marker": "Exclamation !",
+      "col": "n_exclam",
+      "rate_not": 4.897,
+      "rate_sarc": 13.767,
+      "lift": 2.811,
+      "too_rare": false
+    },
+    {
+      "marker": "Interjection (oh/wow)",
+      "col": "n_interjections",
+      "rate_not": 13.633,
+      "rate_sarc": 26.869,
+      "lift": 1.971,
+      "too_rare": false
+    },
+    {
+      "marker": "Elongation (sooo)",
+      "col": "n_elongation",
+      "rate_not": 0.969,
+      "rate_sarc": 1.439,
+      "lift": 1.485,
+      "too_rare": false
+    },
+    {
+      "marker": "Repeated punct !!",
+      "col": "n_repeat_punct",
+      "rate_not": 8.027,
+      "rate_sarc": 8.451,
+      "lift": 1.053,
+      "too_rare": false
+    },
+    {
+      "marker": "Ellipsis ...",
+      "col": "n_ellipsis",
+      "rate_not": 8.004,
+      "rate_sarc": 8.414,
+      "lift": 1.051,
+      "too_rare": false
+    },
+    {
+      "marker": "ALL-CAPS word",
+      "col": "n_allcaps_words",
+      "rate_not": 11.297,
+      "rate_sarc": 11.869,
+      "lift": 1.051,
+      "too_rare": false
+    },
+    {
+      "marker": "Question ?",
+      "col": "n_question",
+      "rate_not": 12.602,
+      "rate_sarc": 11.153,
+      "lift": 0.885,
+      "too_rare": false
+    },
+    {
+      "marker": "Scare quotes",
+      "col": "n_scare_quotes",
+      "rate_not": 4.292,
+      "rate_sarc": 2.867,
+      "lift": 0.668,
+      "too_rare": false
+    },
+    {
+      "marker": "Emoji",
+      "col": "n_emoji",
+      "rate_not": 0.0,
+      "rate_sarc": 0.0,
+      "lift": NaN,
+      "too_rare": true
+    }
+  ],
+  "n_subreddits": 13970,
+  "subreddits_with_500plus": 268,
+  "top20_subreddit_share": 0.3569,
+  "subreddit_sarcasm_rate_spread": {
+    "min": 0.0805,
+    "max": 0.7906,
+    "std": 0.0834,
+    "lowest": {
+      "RoastMe": 0.0805,
+      "me_irl": 0.1442,
+      "Games": 0.2233,
+      "4chan": 0.2616,
+      "CasualConversation": 0.3027,
+      "buildapc": 0.3072,
+      "polandball": 0.3081,
+      "aww": 0.322
+    },
+    "highest": {
+      "conspiratard": 0.6593,
+      "ShitRedditSays": 0.6746,
+      "niceguys": 0.6749,
+      "Bad_Cop_No_Donut": 0.682,
+      "MensRights": 0.6859,
+      "rage": 0.7055,
+      "progun": 0.7256,
+      "creepyPMs": 0.7906
+    }
+  },
+  "sarcasm_rate_by_year": {
+    "2009": 0.5861,
+    "2010": 0.5685,
+    "2011": 0.5582,
+    "2012": 0.5439,
+    "2013": 0.5469,
+    "2014": 0.5453,
+    "2015": 0.5305,
+    "2016": 0.4768
+  },
+  "rows_by_year": {
+    "2009": 1679,
+    "2010": 4827,
+    "2011": 11542,
+    "2012": 24888,
+    "2013": 57938,
+    "2014": 124841,
+    "2015": 258732,
+    "2016": 429322
+  },
+  "sarcasm_rate_by_hour_range_pct": [
+    48.68,
+    52.38
+  ],
+  "sarcasm_rate_by_score": {
+    "<-5": {
+      "rate": 0.6764,
+      "n": 19477
+    },
+    "-5..-1": {
+      "rate": 0.6718,
+      "n": 41901
+    },
+    "0": {
+      "rate": 0.6209,
+      "n": 51840
+    },
+    "1": {
+      "rate": 0.4455,
+      "n": 302047
+    },
+    "2": {
+      "rate": 0.4808,
+      "n": 146530
+    },
+    "3-5": {
+      "rate": 0.5182,
+      "n": 156000
+    },
+    "6-10": {
+      "rate": 0.5438,
+      "n": 89527
+    },
+    "11-50": {
+      "rate": 0.5475,
+      "n": 87622
+    },
+    ">50": {
+      "rate": 0.498,
+      "n": 18825
+    }
+  },
+  "feature_point_biserial_r": [
+    {
+      "feature": "n_interjections",
+      "r": 0.1641
+    },
+    {
+      "feature": "has_positive_interjection",
+      "r": 0.1595
+    },
+    {
+      "feature": "starts_with_interjection",
+      "r": 0.1579
+    },
+    {
+      "feature": "n_exclam",
+      "r": 0.1473
+    },
+    {
+      "feature": "parent_jaccard",
+      "r": -0.065
+    },
+    {
+      "feature": "downs",
+      "r": 0.0588
+    },
+    {
+      "feature": "downs_is_missing",
+      "r": -0.0588
+    },
+    {
+      "feature": "year",
+      "r": -0.0533
+    },
+    {
+      "feature": "is_controversial",
+      "r": -0.0462
+    },
+    {
+      "feature": "avg_word_len",
+      "r": 0.0457
+    },
+    {
+      "feature": "ups_is_missing",
+      "r": -0.0381
+    },
+    {
+      "feature": "n_scare_quotes",
+      "r": -0.0379
+    },
+    {
+      "feature": "n_words",
+      "r": -0.0377
+    },
+    {
+      "feature": "month",
+      "r": -0.0292
+    },
+    {
+      "feature": "n_chars",
+      "r": -0.0267
+    },
+    {
+      "feature": "n_question",
+      "r": -0.0224
+    },
+    {
+      "feature": "n_allcaps_words",
+      "r": 0.0224
+    },
+    {
+      "feature": "len_ratio_to_parent",
+      "r": -0.0196
+    },
+    {
+      "feature": "allcaps_ratio",
+      "r": 0.0169
+    },
+    {
+      "feature": "hour_utc",
+      "r": 0.0147
+    },
+    {
+      "feature": "n_elongation",
+      "r": 0.0147
+    },
+    {
+      "feature": "n_sentences",
+      "r": -0.012
+    },
+    {
+      "feature": "score",
+      "r": -0.0101
+    },
+    {
+      "feature": "parent_n_words",
+      "r": -0.0091
+    },
+    {
+      "feature": "n_repeat_punct",
+      "r": 0.0081
+    },
+    {
+      "feature": "n_ellipsis",
+      "r": 0.0079
+    },
+    {
+      "feature": "weekday",
+      "r": -0.0076
+    },
+    {
+      "feature": "ups",
+      "r": -0.0067
+    },
+    {
+      "feature": "parent_is_empty",
+      "r": -0.0063
+    },
+    {
+      "feature": "parent_n_chars",
+      "r": -0.0055
+    },
+    {
+      "feature": "had_slash_s",
+      "r": -0.0027
+    },
+    {
+      "feature": "n_emoji",
+      "r": 0.0014
+    },
+    {
+      "feature": "had_explicit_sarcasm_word",
+      "r": -0.0011
+    },
+    {
+      "feature": "had_label_hashtag",
+      "r": 0.001
+    },
+    {
+      "feature": "en_score",
+      "r": 0.0009
+    }
+  ],
+  "parent_jaccard_mean": {
+    "0": 0.0585,
+    "1": 0.0494
+  },
+  "parent_len_median": {
+    "0": 14.0,
+    "1": 14.0
+  },
+  "sarcasm_rate_by_len_ratio_to_parent": {
+    "<0.2": {
+      "rate": 0.4985,
+      "n": 125237
+    },
+    "0.2-0.4": {
+      "rate": 0.5121,
+      "n": 165093
+    },
+    "0.4-0.7": {
+      "rate": 0.5207,
+      "n": 195550
+    },
+    "0.7-1": {
+      "rate": 0.5151,
+      "n": 142583
+    },
+    "1-1.5": {
+      "rate": 0.5196,
+      "n": 108461
+    },
+    "1.5-2.5": {
+      "rate": 0.504,
+      "n": 97050
+    },
+    "2.5-5": {
+      "rate": 0.4834,
+      "n": 58079
+    },
+    ">5": {
+      "rate": 0.4539,
+      "n": 21100
+    }
+  },
+  "log_odds_top_sarcastic": [
+    {
+      "token": "yeah",
+      "z": 72.24,
+      "n_sarc": 13728,
+      "n_not": 3765
+    },
+    {
+      "token": "because",
+      "z": 68.68,
+      "n_sarc": 16049,
+      "n_not": 5811
+    },
+    {
+      "token": "obviously",
+      "z": 44.29,
+      "n_sarc": 3887,
+      "n_not": 445
+    },
+    {
+      "token": "all",
+      "z": 41.76,
+      "n_sarc": 13832,
+      "n_not": 7974
+    },
+    {
+      "token": "totally",
+      "z": 40.82,
+      "n_sarc": 3356,
+      "n_not": 459
+    },
+    {
+      "token": "yes",
+      "z": 37.12,
+      "n_sarc": 5054,
+      "n_not": 1935
+    },
+    {
+      "token": "clearly",
+      "z": 35.93,
+      "n_sarc": 2654,
+      "n_not": 409
+    },
+    {
+      "token": "we",
+      "z": 35.23,
+      "n_sarc": 10615,
+      "n_not": 6279
+    },
+    {
+      "token": "right",
+      "z": 31.06,
+      "n_sarc": 6531,
+      "n_not": 3534
+    },
+    {
+      "token": "oh",
+      "z": 30.7,
+      "n_sarc": 4004,
+      "n_not": 1701
+    },
+    {
+      "token": "so",
+      "z": 28.83,
+      "n_sarc": 15781,
+      "n_not": 11509
+    },
+    {
+      "token": "should",
+      "z": 28.41,
+      "n_sarc": 5925,
+      "n_not": 3311
+    },
+    {
+      "token": "no",
+      "z": 28.16,
+      "n_sarc": 10647,
+      "n_not": 7184
+    },
+    {
+      "token": "must",
+      "z": 28.08,
+      "n_sarc": 2599,
+      "n_not": 909
+    },
+    {
+      "token": "wow",
+      "z": 27.71,
+      "n_sarc": 2182,
+      "n_not": 655
+    },
+    {
+      "token": "racist",
+      "z": 26.96,
+      "n_sarc": 1589,
+      "n_not": 304
+    },
+    {
+      "token": "women",
+      "z": 26.5,
+      "n_sarc": 2037,
+      "n_not": 626
+    },
+    {
+      "token": "white",
+      "z": 26.36,
+      "n_sarc": 2469,
+      "n_not": 921
+    },
+    {
+      "token": "sure",
+      "z": 25.03,
+      "n_sarc": 5208,
+      "n_not": 3046
+    },
+    {
+      "token": "nah",
+      "z": 24.76,
+      "n_sarc": 1641,
+      "n_not": 457
+    },
+    {
+      "token": "everyone",
+      "z": 23.86,
+      "n_sarc": 2834,
+      "n_not": 1323
+    },
+    {
+      "token": "yea",
+      "z": 22.74,
+      "n_sarc": 1465,
+      "n_not": 438
+    }
+  ],
+  "log_odds_top_not_sarcastic": [
+    {
+      "token": "it",
+      "z": -30.91,
+      "n_sarc": 23332,
+      "n_not": 31646
+    },
+    {
+      "token": "my",
+      "z": -28.63,
+      "n_sarc": 6756,
+      "n_not": 10964
+    },
+    {
+      "token": "or",
+      "z": -28.51,
+      "n_sarc": 5610,
+      "n_not": 9458
+    },
+    {
+      "token": "think",
+      "z": -28.13,
+      "n_sarc": 3696,
+      "n_not": 6850
+    },
+    {
+      "token": "still",
+      "z": -25.74,
+      "n_sarc": 1714,
+      "n_not": 3791
+    },
+    {
+      "token": "also",
+      "z": -23.92,
+      "n_sarc": 1387,
+      "n_not": 3137
+    },
+    {
+      "token": "i've",
+      "z": -23.5,
+      "n_sarc": 789,
+      "n_not": 2192
+    },
+    {
+      "token": "pretty",
+      "z": -22.27,
+      "n_sarc": 1438,
+      "n_not": 3064
+    },
+    {
+      "token": "i'd",
+      "z": -22.06,
+      "n_sarc": 657,
+      "n_not": 1871
+    },
+    {
+      "token": "me",
+      "z": -21.92,
+      "n_sarc": 4904,
+      "n_not": 7635
+    },
+    {
+      "token": "was",
+      "z": -21.85,
+      "n_sarc": 10185,
+      "n_not": 14086
+    },
+    {
+      "token": "in",
+      "z": -20.65,
+      "n_sarc": 22794,
+      "n_not": 28461
+    },
+    {
+      "token": "some",
+      "z": -20.44,
+      "n_sarc": 2819,
+      "n_not": 4780
+    },
+    {
+      "token": "the",
+      "z": -20.23,
+      "n_sarc": 79768,
+      "n_not": 91204
+    },
+    {
+      "token": "as",
+      "z": -19.52,
+      "n_sarc": 7920,
+      "n_not": 10996
+    },
+    {
+      "token": "which",
+      "z": -19.19,
+      "n_sarc": 1228,
+      "n_not": 2505
+    },
+    {
+      "token": "lot",
+      "z": -18.78,
+      "n_sarc": 842,
+      "n_not": 1915
+    },
+    {
+      "token": "one",
+      "z": -17.67,
+      "n_sarc": 5608,
+      "n_not": 7951
+    },
+    {
+      "token": "actually",
+      "z": -17.64,
+      "n_sarc": 1606,
+      "n_not": 2903
+    },
+    {
+      "token": "bit",
+      "z": -16.39,
+      "n_sarc": 370,
+      "n_not": 1045
+    },
+    {
+      "token": "on",
+      "z": -16.13,
+      "n_sarc": 13283,
+      "n_not": 16669
+    },
+    {
+      "token": "if",
+      "z": -15.96,
+      "n_sarc": 10140,
+      "n_not": 13035
+    }
+  ],
+  "cross_corpus_marker_lift": {
+    "reddit_sarc (primary)": {
+      "ALL-CAPS word": 1.051,
+      "Ellipsis ...": 1.051,
+      "Elongation (sooo)": 1.485,
+      "Exclamation !": 2.811,
+      "Question ?": 0.885,
+      "Repeated punct !!": 1.053
+    },
+    "figlang_reddit": {
+      "ALL-CAPS word": 1.106,
+      "Ellipsis ...": 0.823,
+      "Elongation (sooo)": 1.605,
+      "Exclamation !": 2.912,
+      "Question ?": 1.231,
+      "Repeated punct !!": 0.92
+    },
+    "news_headlines": {
+      "ALL-CAPS word": NaN,
+      "Ellipsis ...": 0.056,
+      "Elongation (sooo)": 0.691,
+      "Exclamation !": 0.25,
+      "Question ?": 0.151,
+      "Repeated punct !!": 0.055
+    },
+    "tweeteval_irony": {
+      "ALL-CAPS word": 0.745,
+      "Ellipsis ...": 0.957,
+      "Elongation (sooo)": 1.453,
+      "Exclamation !": 1.051,
+      "Question ?": 0.791,
+      "Repeated punct !!": 1.028
+    },
+    "figlang_twitter": {
+      "ALL-CAPS word": 1.026,
+      "Ellipsis ...": 0.973,
+      "Elongation (sooo)": 0.614,
+      "Exclamation !": 0.57,
+      "Question ?": 1.545,
+      "Repeated punct !!": 0.966
+    },
+    "twitter_sarcasm": {
+      "ALL-CAPS word": NaN,
+      "Ellipsis ...": NaN,
+      "Elongation (sooo)": NaN,
+      "Exclamation !": NaN,
+      "Question ?": NaN,
+      "Repeated punct !!": NaN
+    }
+  },
+  "figlang_context_median_words": {
+    "0": {
+      "figlang_reddit": 31.0,
+      "figlang_twitter": 70.0
+    },
+    "1": {
+      "figlang_reddit": 33.0,
+      "figlang_twitter": 65.0
+    }
+  }
+}

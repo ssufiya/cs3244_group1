@@ -1,0 +1,30 @@
+# Data. Large and fully reproducible from pipeline/ — see data/README.md.
+# The manifest, the catalogue and the CSV previews are tracked.
+data/**
+!data/README.md
+!data/MANIFEST.json
+!data/catalog.json
+!data/samples/
+!data/samples/**
+
+# Fitted estimators and cached feature matrices (modelling/).
+models/
+.cache/
+
+# Run logs
+results/**/_*.log
+results/algo2/tuning_trials_partial.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

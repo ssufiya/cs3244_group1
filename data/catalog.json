@@ -1,0 +1,303 @@
+{
+  "generated_utc": "2026-09-20T11:20:10Z",
+  "seed": 3244,
+  "ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "entries": [
+    {
+      "name": "sarc_random",
+      "dir": "Dataset/data/primary/sarc_random",
+      "files": {
+        "train": "Dataset/data/primary/sarc_random/train.parquet",
+        "val": "Dataset/data/primary/sarc_random/val.parquet",
+        "test": "Dataset/data/primary/sarc_random/test.parquet"
+      },
+      "preview_csv": "Dataset/data/samples/sarc_random_preview200.csv",
+      "rows_total": 913769,
+      "splits": {
+        "train": {
+          "rows": 639638,
+          "sarcastic_pct": 50.91
+        },
+        "val": {
+          "rows": 137066,
+          "sarcastic_pct": 50.91
+        },
+        "test": {
+          "rows": 137065,
+          "sarcastic_pct": 51.07
+        }
+      },
+      "text_column": "comment_clean",
+      "label_column": "label",
+      "role": "DEFAULT training corpus. Grouped-random 70/15/15, siblings kept together so the parent comment never spans two splits.",
+      "project_stage": "Week 7 — base models + hyper-parameter tuning",
+      "use_when": "Use this for the three baseline algorithms and all tuning. Report its test score as the headline number; it is the one comparable to published SARC results.",
+      "notes": "Optimistic relative to the two stress splits: subreddit and period are both shared across train/test by design."
+    },
+    {
+      "name": "sarc_temporal",
+      "dir": "Dataset/data/primary/sarc_temporal",
+      "files": {
+        "train": "Dataset/data/primary/sarc_temporal/train.parquet",
+        "val": "Dataset/data/primary/sarc_temporal/val.parquet",
+        "test": "Dataset/data/primary/sarc_temporal/test.parquet"
+      },
+      "preview_csv": "Dataset/data/samples/sarc_temporal_preview200.csv",
+      "rows_total": 908979,
+      "splits": {
+        "train": {
+          "rows": 484447,
+          "sarcastic_pct": 53.82
+        },
+        "val": {
+          "rows": 182441,
+          "sarcastic_pct": 50.38
+        },
+        "test": {
+          "rows": 242091,
+          "sarcastic_pct": 45.79
+        }
+      },
+      "text_column": "comment_clean",
+      "label_column": "label",
+      "role": "STRESS TEST — time generalisation. train <2016, val 2016-H1, test 2016-H2.",
+      "project_stage": "Week 8 — ablation study",
+      "use_when": "Run the tuned model from sarc_random on this without re-tuning. The gap vs sarc_random is how much of the score was period memorisation.",
+      "notes": "4,790 rows removed to keep parent threads on one side. Label rate differs by design (pre-2016 ~55% sarcastic, 2016 ~48%) — that drift is the thing being measured, not a bug."
+    },
+    {
+      "name": "sarc_subreddit",
+      "dir": "Dataset/data/primary/sarc_subreddit",
+      "files": {
+        "train": "Dataset/data/primary/sarc_subreddit/train.parquet",
+        "val": "Dataset/data/primary/sarc_subreddit/val.parquet",
+        "test": "Dataset/data/primary/sarc_subreddit/test.parquet"
+      },
+      "preview_csv": "Dataset/data/samples/sarc_subreddit_preview200.csv",
+      "rows_total": 910495,
+      "splits": {
+        "train": {
+          "rows": 639838,
+          "sarcastic_pct": 51.11
+        },
+        "val": {
+          "rows": 135123,
+          "sarcastic_pct": 51.19
+        },
+        "test": {
+          "rows": 135534,
+          "sarcastic_pct": 49.93
+        }
+      },
+      "text_column": "comment_clean",
+      "label_column": "label",
+      "role": "STRESS TEST — community generalisation. No subreddit appears in more than one split.",
+      "project_stage": "Week 8 — ablation study (sub-question 3)",
+      "use_when": "This is the split that actually answers 'is the subreddit topic necessary?'. Train with and without the subreddit feature here and compare; on sarc_random the comparison is confounded because the model sees the same communities twice.",
+      "notes": "3,274 rows removed so no parent thread spans splits. Subreddit sarcasm rate ranges 8%-79%, so train/test label balance will not match exactly. Expect the lowest scores of the three schemes; that is the point."
+    },
+    {
+      "name": "news_headlines",
+      "dir": "Dataset/data/supplementary/news_headlines",
+      "files": {
+        "train": "Dataset/data/supplementary/news_headlines/train.parquet",
+        "val": "Dataset/data/supplementary/news_headlines/val.parquet",
+        "test": "Dataset/data/supplementary/news_headlines/test.parquet"
+      },
+      "preview_csv": "Dataset/data/samples/news_headlines_preview200.csv",
+      "rows_total": 28375,
+      "splits": {
+        "train": {
+          "rows": 19862,
+          "sarcastic_pct": 47.51
+        },
+        "val": {
+          "rows": 4256,
+          "sarcastic_pct": 47.51
+        },
+        "test": {
+          "rows": 4257,
+          "sarcastic_pct": 47.52
+        }
+      },
+      "text_column": "text_clean",
+      "label_column": "label",
+      "role": "Cross-domain evaluation: professionally edited prose (TheOnion vs HuffPost).",
+      "project_stage": "Week 8 — ablation / generalisation",
+      "use_when": "Train on SARC, test here to show how much of the model is Reddit-register rather than sarcasm. Also usable as a small in-domain training set of its own for comparison.",
+      "notes": "RE-SPLIT BY US. The upstream train/test split was 100% contaminated (every test headline also appeared in train); these are fresh stratified 70/15/15 splits of the deduplicated rows. `article_link` was dropped — it is a perfect label leak."
+    },
+    {
+      "name": "tweeteval_irony",
+      "dir": "Dataset/data/supplementary/tweeteval_irony",
+      "files": {
+        "train": "Dataset/data/supplementary/tweeteval_irony/train.parquet",
+        "val": "Dataset/data/supplementary/tweeteval_irony/val.parquet",
+        "test": "Dataset/data/supplementary/tweeteval_irony/test.parquet"
+      },
+      "preview_csv": "Dataset/data/samples/tweeteval_irony_preview200.csv",
+      "rows_total": 4583,
+      "splits": {
+        "train": {
+          "rows": 2853,
+          "sarcastic_pct": 50.54
+        },
+        "val": {
+          "rows": 950,
+          "sarcastic_pct": 48.0
+        },
+        "test": {
+          "rows": 780,
+          "sarcastic_pct": 39.74
+        }
+      },
+      "text_column": "text_clean",
+      "label_column": "label",
+      "role": "PRIMARY cross-platform test set. SemEval-2018 Task 3A, human-annotated.",
+      "project_stage": "Week 7 (report) and Week 8 (ablation)",
+      "use_when": "The headline transfer number. Do not train on it — train on SARC and evaluate here. Official splits are preserved so results stay comparable to published work; use `test` for the reported figure and concatenate all three only if you want a larger evaluation sample.",
+      "notes": "Only corpus here whose labels were checked by humans rather than inferred from an author-written tag. 436 rows still contained #irony/#sarcasm/#not — stripped by the cleaner."
+    },
+    {
+      "name": "figlang_reddit",
+      "dir": "Dataset/data/supplementary/figlang_reddit",
+      "files": {
+        "train": "Dataset/data/supplementary/figlang_reddit/train.parquet",
+        "val": "Dataset/data/supplementary/figlang_reddit/val.parquet",
+        "test": "Dataset/data/supplementary/figlang_reddit/test.parquet"
+      },
+      "preview_csv": "Dataset/data/samples/figlang_reddit_preview200.csv",
+      "rows_total": 6144,
+      "splits": {
+        "train": {
+          "rows": 3729,
+          "sarcastic_pct": 49.99
+        },
+        "val": {
+          "rows": 659,
+          "sarcastic_pct": 50.08
+        },
+        "test": {
+          "rows": 1756,
+          "sarcastic_pct": 49.72
+        }
+      },
+      "text_column": "text_clean",
+      "label_column": "label",
+      "role": "Multi-turn context ablation (Reddit).",
+      "project_stage": "Week 8 — ablation (sub-question 1)",
+      "use_when": "SARC gives exactly one parent turn, so it can only test 'context vs no context'. Use this to sweep 0 / 1 / n turns and answer sub-question 1 as a curve.",
+      "notes": "`context_clean` joins turns oldest-first with ' || '; `n_context_turns` gives the count. Val carved from the official train split."
+    },
+    {
+      "name": "figlang_twitter",
+      "dir": "Dataset/data/supplementary/figlang_twitter",
+      "files": {
+        "train": "Dataset/data/supplementary/figlang_twitter/train.parquet",
+        "val": "Dataset/data/supplementary/figlang_twitter/val.parquet",
+        "test": "Dataset/data/supplementary/figlang_twitter/test.parquet"
+      },
+      "preview_csv": "Dataset/data/samples/figlang_twitter_preview200.csv",
+      "rows_total": 6454,
+      "splits": {
+        "train": {
+          "rows": 4028,
+          "sarcastic_pct": 52.61
+        },
+        "val": {
+          "rows": 711,
+          "sarcastic_pct": 52.6
+        },
+        "test": {
+          "rows": 1715,
+          "sarcastic_pct": 47.52
+        }
+      },
+      "text_column": "text_clean",
+      "label_column": "label",
+      "role": "Multi-turn context ablation (Twitter).",
+      "project_stage": "Week 8 — ablation (sub-question 1)",
+      "use_when": "Same as figlang_reddit, on the other platform — lets you separate 'context helps' from 'context helps on Reddit'.",
+      "notes": "Same context encoding. Val carved from the official train split."
+    },
+    {
+      "name": "twitter_sarcasm_REJECTED",
+      "dir": "Dataset/data/_rejected",
+      "files": {
+        "all": "Dataset/data/_rejected/twitter_sarcasm_REJECTED.parquet"
+      },
+      "rows_total": 224,
+      "splits": {},
+      "text_column": "text_clean",
+      "label_column": "label",
+      "role": "REJECTED — synthetic/templated, not usable.",
+      "project_stage": "n/a",
+      "use_when": "Never. Cite the audit in the report; do not model on it.",
+      "notes": "5,000 rows -> 240 unique texts. See _rejected/README.md."
+    },
+    {
+      "name": "lexicon:empath_categories.tsv",
+      "dir": "Dataset/data/lexicons",
+      "files": {
+        "all": "Dataset/data/lexicons/empath_categories.tsv"
+      },
+      "rows_total": null,
+      "splits": {},
+      "text_column": null,
+      "label_column": null,
+      "role": "194 psycholinguistic word categories (free LIWC substitute)",
+      "project_stage": "Week 8 — linguistic-cue features (sub-question 2)",
+      "use_when": "Feature engineering only — never as a label source.",
+      "notes": "0.14 MB"
+    },
+    {
+      "name": "lexicon:vader_lexicon.txt",
+      "dir": "Dataset/data/lexicons",
+      "files": {
+        "all": "Dataset/data/lexicons/vader_lexicon.txt"
+      },
+      "rows_total": null,
+      "splits": {},
+      "text_column": null,
+      "label_column": null,
+      "role": "valence + intensity per token, incl. emoticons",
+      "project_stage": "Week 8 — hyperbole / intensifier features",
+      "use_when": "Feature engineering only — never as a label source.",
+      "notes": "0.43 MB"
+    },
+    {
+      "name": "lexicon:nrc_emotion_lexicon.txt",
+      "dir": "Dataset/data/lexicons",
+      "files": {
+        "all": "Dataset/data/lexicons/nrc_emotion_lexicon.txt"
+      },
+      "rows_total": null,
+      "splits": {},
+      "text_column": null,
+      "label_column": null,
+      "role": "8 emotions + 2 sentiments per word",
+      "project_stage": "Week 8 — sentiment-incongruity features",
+      "use_when": "Feature engineering only — never as a label source.",
+      "notes": "2.72 MB"
+    },
+    {
+      "name": "lexicon:SentiWordNet_3.0.0.txt",
+      "dir": "Dataset/data/lexicons",
+      "files": {
+        "all": "Dataset/data/lexicons/SentiWordNet_3.0.0.txt"
+      },
+      "rows_total": null,
+      "splits": {},
+      "text_column": null,
+      "label_column": null,
+      "role": "per-synset positive/negative scores",
+      "project_stage": "Week 8 — sentiment-incongruity features",
+      "use_when": "Feature engineering only — never as a label source.",
+      "notes": "13.59 MB"
+    }
+  ]
+}

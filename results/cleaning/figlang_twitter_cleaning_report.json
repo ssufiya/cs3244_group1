@@ -1,0 +1,102 @@
+{
+  "dataset": "figlang_twitter",
+  "rows_in": 6800,
+  "rows_out": 6454,
+  "retained_pct": 94.91,
+  "elapsed_sec": 3.0,
+  "steps": [
+    {
+      "step": 1,
+      "reason": "no usable label",
+      "removed": 0,
+      "pct_of_original": 0.0,
+      "rows_remaining": 6800,
+      "detail": ""
+    },
+    {
+      "step": 2,
+      "reason": "empty / placeholder text",
+      "removed": 0,
+      "pct_of_original": 0.0,
+      "rows_remaining": 6800,
+      "detail": ""
+    },
+    {
+      "step": 3,
+      "reason": "empty after markup/leak removal",
+      "removed": 2,
+      "pct_of_original": 0.0294,
+      "rows_remaining": 6798,
+      "detail": ""
+    },
+    {
+      "step": 4,
+      "reason": "fewer than 2 words",
+      "removed": 0,
+      "pct_of_original": 0.0,
+      "rows_remaining": 6798,
+      "detail": ""
+    },
+    {
+      "step": 5,
+      "reason": "non-English",
+      "removed": 2,
+      "pct_of_original": 0.0294,
+      "rows_remaining": 6796,
+      "detail": ""
+    },
+    {
+      "step": 6,
+      "reason": "exact dup within split",
+      "removed": 339,
+      "pct_of_original": 4.9853,
+      "rows_remaining": 6457,
+      "detail": ""
+    },
+    {
+      "step": 7,
+      "reason": "same text carries both labels",
+      "removed": 2,
+      "pct_of_original": 0.0294,
+      "rows_remaining": 6455,
+      "detail": ""
+    },
+    {
+      "step": 8,
+      "reason": "duplicate across splits (test copy dropped)",
+      "removed": 1,
+      "pct_of_original": 0.0147,
+      "rows_remaining": 6454,
+      "detail": ""
+    }
+  ],
+  "stats": {
+    "platform": "twitter",
+    "splits_in": {
+      "train": 5000,
+      "test": 1800
+    },
+    "unlabelled_rows": 0,
+    "leak_slash_s": 3,
+    "leak_label_hashtag": 3,
+    "leak_explicit_word": 2,
+    "leak_rate_by_label": {
+      "0": 0.000294,
+      "1": 0.002059
+    },
+    "became_empty_after_cleaning": 2,
+    "lang_method_counts": {
+      "heuristic-high": 6774,
+      "langdetect": 24
+    },
+    "label_conflicting_rows": 2,
+    "final_label_balance": {
+      "1": 3308,
+      "0": 3146
+    },
+    "splits_out": {
+      "train": 4739,
+      "test": 1715
+    }
+  }
+}

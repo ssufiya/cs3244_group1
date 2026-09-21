@@ -1,0 +1,213 @@
+{
+  "generated_utc": "2026-09-17T06:46:53Z",
+  "files": [
+    {
+      "group": "figlang",
+      "file": "data/raw/supplementary/figlang2020_context/reddit_testing.jsonl",
+      "bytes": 1094875,
+      "sha256": "401a451af95f89c402c48a83c66034c2c8931aade35a73b2907d03f0efbffb95",
+      "url": "https://huggingface.co/datasets/tasksource/figlang2020-sarcasm/resolve/main/sarcasm_detection_shared_task_reddit_testing.jsonl",
+      "role": "Multi-turn context ablation (Reddit) - test.",
+      "notes": "",
+      "tags": [
+        "reddit",
+        "multi-turn-context"
+      ]
+    },
+    {
+      "group": "figlang",
+      "file": "data/raw/supplementary/figlang2020_context/reddit_training.jsonl",
+      "bytes": 1392558,
+      "sha256": "aa69ff5a809e63b3336fa297dbfbd1d8f884c27dd68001b0633c128ad5f07059",
+      "url": "https://huggingface.co/datasets/tasksource/figlang2020-sarcasm/resolve/main/sarcasm_detection_shared_task_reddit_training.jsonl",
+      "role": "Multi-turn context ablation (Reddit) - train.",
+      "notes": "",
+      "tags": [
+        "reddit",
+        "multi-turn-context"
+      ]
+    },
+    {
+      "group": "figlang",
+      "file": "data/raw/supplementary/figlang2020_context/twitter_testing.jsonl",
+      "bytes": 1317439,
+      "sha256": "bed4954c4fc98810f6a1c22e5ac5a027c7d0df283d770d8113a64d5fe9fefae3",
+      "url": "https://huggingface.co/datasets/tasksource/figlang2020-sarcasm/resolve/main/sarcasm_detection_shared_task_twitter_testing.jsonl",
+      "role": "Multi-turn context ablation (Twitter) - test.",
+      "notes": "",
+      "tags": [
+        "twitter",
+        "multi-turn-context"
+      ]
+    },
+    {
+      "group": "figlang",
+      "file": "data/raw/supplementary/figlang2020_context/twitter_training.jsonl",
+      "bytes": 3871480,
+      "sha256": "c5180db39589d4ff93fa5c07fa44888dab6694cddd50b08c938c71445156cecf",
+      "url": "https://huggingface.co/datasets/tasksource/figlang2020-sarcasm/resolve/main/sarcasm_detection_shared_task_twitter_training.jsonl",
+      "role": "Multi-turn context ablation (Twitter) - train.",
+      "notes": "",
+      "tags": [
+        "twitter",
+        "multi-turn-context"
+      ]
+    },
+    {
+      "group": "irony",
+      "file": "data/raw/supplementary/tweeteval_irony/test.parquet",
+      "bytes": 53984,
+      "sha256": "d6bcf4eae70637cacc9239773684a37cbfa3ef98fde5f173355651afee477862",
+      "url": "https://huggingface.co/datasets/cardiffnlp/tweet_eval/resolve/main/irony/test-00000-of-00001.parquet",
+      "role": "SemEval-2018 Task 3A - test.",
+      "notes": "",
+      "tags": [
+        "twitter",
+        "human-annotated",
+        "benchmark"
+      ]
+    },
+    {
+      "group": "irony",
+      "file": "data/raw/supplementary/tweeteval_irony/train.parquet",
+      "bytes": 182571,
+      "sha256": "541de8c14f53024660fa5ae1534489b51106c5f4905da294e47ded7e09d73ad0",
+      "url": "https://huggingface.co/datasets/cardiffnlp/tweet_eval/resolve/main/irony/train-00000-of-00001.parquet",
+      "role": "Gold human-annotated irony benchmark (SemEval-2018 Task 3A) - train.",
+      "notes": "",
+      "tags": [
+        "twitter",
+        "human-annotated",
+        "benchmark"
+      ]
+    },
+    {
+      "group": "irony",
+      "file": "data/raw/supplementary/tweeteval_irony/validation.parquet",
+      "bytes": 61092,
+      "sha256": "2ac02a5943b02808f1998dfacba7fce89033be6b3e4bbb465a26faafabf21191",
+      "url": "https://huggingface.co/datasets/cardiffnlp/tweet_eval/resolve/main/irony/validation-00000-of-00001.parquet",
+      "role": "SemEval-2018 Task 3A - validation.",
+      "notes": "",
+      "tags": [
+        "twitter",
+        "human-annotated",
+        "benchmark"
+      ]
+    },
+    {
+      "group": "lexicon",
+      "file": "data/raw/external/lexicons/SentiWordNet_3.0.0.txt",
+      "bytes": 13590743,
+      "sha256": "4fc9b253a45a691f3264d6a5063861a6dfa82dc8c2f254802334650b7728762e",
+      "url": "https://raw.githubusercontent.com/aesuli/SentiWordNet/master/data/SentiWordNet_3.0.0.txt",
+      "role": "SentiWordNet 3.0: per-synset positivity/negativity, the 'general word net' named in the proposal.",
+      "notes": "",
+      "tags": [
+        "lexicon",
+        "sentiment",
+        "wordnet"
+      ]
+    },
+    {
+      "group": "lexicon",
+      "file": "data/raw/external/lexicons/empath_categories.tsv",
+      "bytes": 135655,
+      "sha256": "592c6974c183b65b56248628316631f938c29c2ab90334022cdbfdcda45ef1f7",
+      "url": "https://raw.githubusercontent.com/Ejhfast/empath-client/master/empath/data/categories.tsv",
+      "role": "Empath: 194 psycholinguistic word categories (free LIWC substitute).",
+      "notes": "",
+      "tags": [
+        "lexicon",
+        "empath",
+        "liwc-alternative"
+      ]
+    },
+    {
+      "group": "lexicon",
+      "file": "data/raw/external/lexicons/nrc_emotion_lexicon.txt",
+      "bytes": 2720966,
+      "sha256": "df3638e9fdbd2ebcf69bad833e16aee76c4c4360dfb17324178d1fa1e812ceec",
+      "url": "https://raw.githubusercontent.com/dinbav/LeXmo/master/NRC-Emotion-Lexicon-Wordlevel-v0.92.txt",
+      "role": "NRC EmoLex: 8 emotions + 2 sentiments per word, for incongruity features.",
+      "notes": "",
+      "tags": [
+        "lexicon",
+        "emotion"
+      ]
+    },
+    {
+      "group": "lexicon",
+      "file": "data/raw/external/lexicons/vader_lexicon.txt",
+      "bytes": 426786,
+      "sha256": "ec636f884f36b5de6a4d681b2f61c08c2ec90eeb440472033f3307d0d6fa8bc9",
+      "url": "https://raw.githubusercontent.com/cjhutto/vaderSentiment/master/vaderSentiment/vader_lexicon.txt",
+      "role": "VADER valence lexicon: sentiment polarity + intensity (booster words).",
+      "notes": "",
+      "tags": [
+        "lexicon",
+        "sentiment",
+        "intensity"
+      ]
+    },
+    {
+      "group": "news",
+      "file": "data/raw/supplementary/news_headlines/test.json",
+      "bytes": 5590121,
+      "sha256": "385967db361c036919a771b3703cc0ee8cbb16dd3ae5075df2b218e213ea58d1",
+      "url": "https://huggingface.co/datasets/raquiba/Sarcasm_News_Headline/resolve/main/test.json",
+      "role": "Held-out split of the news-headline corpus.",
+      "notes": "",
+      "tags": [
+        "news",
+        "headline"
+      ]
+    },
+    {
+      "group": "news",
+      "file": "data/raw/supplementary/news_headlines/train.json",
+      "bytes": 6028427,
+      "sha256": "2b1f1564d3077f96b6b00a145f844f2a1a98fb92ed44014eef50b5c3b8252c2f",
+      "url": "https://huggingface.co/datasets/raquiba/Sarcasm_News_Headline/resolve/main/train.json",
+      "role": "Low-noise domain: TheOnion (sarcastic) vs HuffPost (serious) headlines.",
+      "notes": "",
+      "tags": [
+        "news",
+        "headline",
+        "clean-text",
+        "editorially-labelled"
+      ]
+    },
+    {
+      "group": "primary",
+      "file": "data/raw/primary/reddit_sarc/train-balanced-sarcasm.csv",
+      "bytes": 255268960,
+      "sha256": "8d0d9d5ac208cefb71f167aadb035471d7594b63bfb7ff4b03194bfb702cef14",
+      "url": "https://huggingface.co/datasets/daniel2588/sarcasm/resolve/main/train-balanced-sarcasm.csv",
+      "role": "Main corpus: ~1.01M balanced Reddit comments, self-annotated with /s.",
+      "notes": "Columns: label, comment, author, subreddit, score, ups, downs, date, created_utc, parent_comment.",
+      "tags": [
+        "reddit",
+        "self-annotated",
+        "context",
+        "metadata"
+      ]
+    },
+    {
+      "group": "tweets",
+      "file": "data/raw/supplementary/twitter_sarcasm/sarcasm_tweets.csv",
+      "bytes": 207992,
+      "sha256": "36d4d4b22bc45348545362988aa41972e4bc0de7c8eac1a6d846e50a0dda492e",
+      "url": "https://huggingface.co/datasets/nikesh66/Sarcasm-dataset/resolve/main/sarcasm_tweets.csv",
+      "role": "Cross-platform transfer test: hashtag-labelled tweets with slang.",
+      "notes": "",
+      "tags": [
+        "twitter",
+        "hashtag-labelled",
+        "slang",
+        "noisy"
+      ]
+    }
+  ],
+  "failures": []
+}

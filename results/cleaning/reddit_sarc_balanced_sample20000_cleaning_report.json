@@ -1,0 +1,102 @@
+{
+  "dataset": "reddit_sarc_balanced",
+  "rows_in": 20000,
+  "rows_out": 18862,
+  "retained_pct": 94.31,
+  "elapsed_sec": 4.5,
+  "steps": [
+    {
+      "step": 1,
+      "reason": "empty / [deleted] / [removed] comment",
+      "removed": 0,
+      "pct_of_original": 0.0,
+      "rows_remaining": 20000,
+      "detail": ""
+    },
+    {
+      "step": 2,
+      "reason": "empty after markup/leak removal",
+      "removed": 3,
+      "pct_of_original": 0.015,
+      "rows_remaining": 19997,
+      "detail": ""
+    },
+    {
+      "step": 3,
+      "reason": "fewer than 2 words",
+      "removed": 852,
+      "pct_of_original": 4.26,
+      "rows_remaining": 19145,
+      "detail": ""
+    },
+    {
+      "step": 4,
+      "reason": "more than 300 words / 2000 chars",
+      "removed": 1,
+      "pct_of_original": 0.005,
+      "rows_remaining": 19144,
+      "detail": ""
+    },
+    {
+      "step": 5,
+      "reason": "non-English (heuristic + langdetect)",
+      "removed": 61,
+      "pct_of_original": 0.305,
+      "rows_remaining": 19083,
+      "detail": ""
+    },
+    {
+      "step": 6,
+      "reason": "exact dup (comment+label+parent)",
+      "removed": 0,
+      "pct_of_original": 0.0,
+      "rows_remaining": 19083,
+      "detail": "same comment under the same parent with the same label"
+    },
+    {
+      "step": 7,
+      "reason": "same text carries both labels",
+      "removed": 88,
+      "pct_of_original": 0.44,
+      "rows_remaining": 18995,
+      "detail": ""
+    },
+    {
+      "step": 8,
+      "reason": "near-dup (normalised text, any parent)",
+      "removed": 133,
+      "pct_of_original": 0.665,
+      "rows_remaining": 18862,
+      "detail": "221 total duplicate rows removed"
+    }
+  ],
+  "stats": {
+    "source_file": "D:\\CS3244ProjectWork\\data\\raw\\primary\\reddit_sarc\\train-balanced-sarcasm.csv",
+    "rows_in_source_file": 1010826,
+    "sampled": true,
+    "leak_slash_s_in_comment": 1,
+    "leak_label_hashtag_in_comment": 0,
+    "leak_explicit_word_in_comment": 0,
+    "leak_rate_by_label": {
+      "0": 0.0001,
+      "1": 0.0
+    },
+    "became_empty_after_cleaning": 3,
+    "lang_method_counts": {
+      "heuristic-high": 19040,
+      "langdetect": 104
+    },
+    "label_conflicting_texts": 29,
+    "label_conflicting_rows": 88,
+    "final_label_balance": {
+      "1": 9593,
+      "0": 9269
+    },
+    "n_subreddits": 2513,
+    "n_authors": 17313,
+    "date_range": [
+      "2009-01-21 21:55:08",
+      "2016-12-31 23:47:18"
+    ]
+  }
+}
