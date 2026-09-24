@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-20T11:22:48Z",
+  "generated_utc": "2026-09-24T10:10:11Z",
   "audit": [
     {
       "dataset": "sarc_random",
@@ -354,13 +354,13 @@
       "test_rows": 137065,
       "majority_class_accuracy": 0.5107,
       "tfidf_logreg": {
-        "accuracy": 0.706,
-        "precision": 0.7238,
-        "recall": 0.6862,
+        "accuracy": 0.7058,
+        "precision": 0.7231,
+        "recall": 0.6868,
         "f1": 0.7045
       },
       "n_features": 114289,
-      "fit_seconds": 20.4
+      "fit_seconds": 23.3
     },
     {
       "dataset": "sarc_subreddit",
@@ -368,13 +368,13 @@
       "test_rows": 135534,
       "majority_class_accuracy": 0.4993,
       "tfidf_logreg": {
-        "accuracy": 0.7017,
+        "accuracy": 0.7016,
         "precision": 0.7138,
-        "recall": 0.672,
-        "f1": 0.6923
+        "recall": 0.6719,
+        "f1": 0.6922
       },
       "n_features": 114218,
-      "fit_seconds": 17.2
+      "fit_seconds": 10.9
     },
     {
       "dataset": "sarc_temporal",
@@ -382,13 +382,13 @@
       "test_rows": 242091,
       "majority_class_accuracy": 0.4579,
       "tfidf_logreg": {
-        "accuracy": 0.6939,
-        "precision": 0.6555,
-        "recall": 0.6983,
-        "f1": 0.6763
+        "accuracy": 0.6941,
+        "precision": 0.6563,
+        "recall": 0.6968,
+        "f1": 0.6759
       },
       "n_features": 115388,
-      "fit_seconds": 20.8
+      "fit_seconds": 15.8
     },
     {
       "dataset": "figlang_reddit",
@@ -402,7 +402,7 @@
         "f1": 0.5808
       },
       "n_features": 4065,
-      "fit_seconds": 0.3
+      "fit_seconds": 0.2
     },
     {
       "dataset": "figlang_twitter",
@@ -416,7 +416,7 @@
         "f1": 0.6656
       },
       "n_features": 6872,
-      "fit_seconds": 0.5
+      "fit_seconds": 0.3
     },
     {
       "dataset": "news_headlines",
@@ -430,7 +430,7 @@
         "f1": 0.8281
       },
       "n_features": 16821,
-      "fit_seconds": 1.5
+      "fit_seconds": 0.8
     },
     {
       "dataset": "tweeteval_irony",
@@ -451,9 +451,9 @@
     {
       "target": "sarc_random (in-domain)",
       "test_rows": 137065,
-      "accuracy": 0.706,
-      "precision": 0.7238,
-      "recall": 0.6862,
+      "accuracy": 0.7058,
+      "precision": 0.7231,
+      "recall": 0.6868,
       "f1": 0.7045,
       "majority_baseline": 0.5107
     },
@@ -461,36 +461,36 @@
       "target": "figlang_reddit",
       "test_rows": 1756,
       "accuracy": 0.6686,
-      "precision": 0.6747,
-      "recall": 0.6438,
-      "f1": 0.6589,
+      "precision": 0.6726,
+      "recall": 0.6495,
+      "f1": 0.6608,
       "majority_baseline": 0.5028
     },
     {
       "target": "figlang_twitter",
       "test_rows": 1715,
-      "accuracy": 0.6146,
-      "precision": 0.6254,
-      "recall": 0.4712,
-      "f1": 0.5374,
+      "accuracy": 0.614,
+      "precision": 0.6236,
+      "recall": 0.4736,
+      "f1": 0.5384,
       "majority_baseline": 0.5248
     },
     {
       "target": "news_headlines",
       "test_rows": 4257,
-      "accuracy": 0.4609,
-      "precision": 0.397,
+      "accuracy": 0.4599,
+      "precision": 0.3958,
       "recall": 0.259,
-      "f1": 0.3135,
+      "f1": 0.3131,
       "majority_baseline": 0.5248
     },
     {
       "target": "tweeteval_irony",
       "test_rows": 780,
-      "accuracy": 0.6167,
-      "precision": 0.5247,
-      "recall": 0.3774,
-      "f1": 0.439,
+      "accuracy": 0.6154,
+      "precision": 0.5221,
+      "recall": 0.3806,
+      "f1": 0.4403,
       "majority_baseline": 0.6026
     }
   ],

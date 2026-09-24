@@ -3,7 +3,7 @@
   "rows_in": 6800,
   "rows_out": 6454,
   "retained_pct": 94.91,
-  "elapsed_sec": 3.0,
+  "elapsed_sec": 5.9,
   "steps": [
     {
       "step": 1,

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-09-20T11:20:10Z",
+  "generated_utc": "2026-09-24T10:01:03Z",
   "seed": 3244,
   "ratios": {
     "train": 0.7,
@@ -9,13 +9,13 @@
   "entries": [
     {
       "name": "sarc_random",
-      "dir": "Dataset/data/primary/sarc_random",
+      "dir": "data/splits/primary/sarc_random",
       "files": {
-        "train": "Dataset/data/primary/sarc_random/train.parquet",
-        "val": "Dataset/data/primary/sarc_random/val.parquet",
-        "test": "Dataset/data/primary/sarc_random/test.parquet"
+        "train": "data/splits/primary/sarc_random/train.parquet",
+        "val": "data/splits/primary/sarc_random/val.parquet",
+        "test": "data/splits/primary/sarc_random/test.parquet"
       },
-      "preview_csv": "Dataset/data/samples/sarc_random_preview200.csv",
+      "preview_csv": "data/samples/sarc_random_preview200.csv",
       "rows_total": 913769,
       "splits": {
         "train": {
@@ -40,13 +40,13 @@
     },
     {
       "name": "sarc_temporal",
-      "dir": "Dataset/data/primary/sarc_temporal",
+      "dir": "data/splits/primary/sarc_temporal",
       "files": {
-        "train": "Dataset/data/primary/sarc_temporal/train.parquet",
-        "val": "Dataset/data/primary/sarc_temporal/val.parquet",
-        "test": "Dataset/data/primary/sarc_temporal/test.parquet"
+        "train": "data/splits/primary/sarc_temporal/train.parquet",
+        "val": "data/splits/primary/sarc_temporal/val.parquet",
+        "test": "data/splits/primary/sarc_temporal/test.parquet"
       },
-      "preview_csv": "Dataset/data/samples/sarc_temporal_preview200.csv",
+      "preview_csv": "data/samples/sarc_temporal_preview200.csv",
       "rows_total": 908979,
       "splits": {
         "train": {
@@ -71,13 +71,13 @@
     },
     {
       "name": "sarc_subreddit",
-      "dir": "Dataset/data/primary/sarc_subreddit",
+      "dir": "data/splits/primary/sarc_subreddit",
       "files": {
-        "train": "Dataset/data/primary/sarc_subreddit/train.parquet",
-        "val": "Dataset/data/primary/sarc_subreddit/val.parquet",
-        "test": "Dataset/data/primary/sarc_subreddit/test.parquet"
+        "train": "data/splits/primary/sarc_subreddit/train.parquet",
+        "val": "data/splits/primary/sarc_subreddit/val.parquet",
+        "test": "data/splits/primary/sarc_subreddit/test.parquet"
       },
-      "preview_csv": "Dataset/data/samples/sarc_subreddit_preview200.csv",
+      "preview_csv": "data/samples/sarc_subreddit_preview200.csv",
       "rows_total": 910495,
       "splits": {
         "train": {
@@ -102,13 +102,13 @@
     },
     {
       "name": "news_headlines",
-      "dir": "Dataset/data/supplementary/news_headlines",
+      "dir": "data/splits/supplementary/news_headlines",
       "files": {
-        "train": "Dataset/data/supplementary/news_headlines/train.parquet",
-        "val": "Dataset/data/supplementary/news_headlines/val.parquet",
-        "test": "Dataset/data/supplementary/news_headlines/test.parquet"
+        "train": "data/splits/supplementary/news_headlines/train.parquet",
+        "val": "data/splits/supplementary/news_headlines/val.parquet",
+        "test": "data/splits/supplementary/news_headlines/test.parquet"
       },
-      "preview_csv": "Dataset/data/samples/news_headlines_preview200.csv",
+      "preview_csv": "data/samples/news_headlines_preview200.csv",
       "rows_total": 28375,
       "splits": {
         "train": {
@@ -133,13 +133,13 @@
     },
     {
       "name": "tweeteval_irony",
-      "dir": "Dataset/data/supplementary/tweeteval_irony",
+      "dir": "data/splits/supplementary/tweeteval_irony",
       "files": {
-        "train": "Dataset/data/supplementary/tweeteval_irony/train.parquet",
-        "val": "Dataset/data/supplementary/tweeteval_irony/val.parquet",
-        "test": "Dataset/data/supplementary/tweeteval_irony/test.parquet"
+        "train": "data/splits/supplementary/tweeteval_irony/train.parquet",
+        "val": "data/splits/supplementary/tweeteval_irony/val.parquet",
+        "test": "data/splits/supplementary/tweeteval_irony/test.parquet"
       },
-      "preview_csv": "Dataset/data/samples/tweeteval_irony_preview200.csv",
+      "preview_csv": "data/samples/tweeteval_irony_preview200.csv",
       "rows_total": 4583,
       "splits": {
         "train": {
@@ -164,13 +164,13 @@
     },
     {
       "name": "figlang_reddit",
-      "dir": "Dataset/data/supplementary/figlang_reddit",
+      "dir": "data/splits/supplementary/figlang_reddit",
       "files": {
-        "train": "Dataset/data/supplementary/figlang_reddit/train.parquet",
-        "val": "Dataset/data/supplementary/figlang_reddit/val.parquet",
-        "test": "Dataset/data/supplementary/figlang_reddit/test.parquet"
+        "train": "data/splits/supplementary/figlang_reddit/train.parquet",
+        "val": "data/splits/supplementary/figlang_reddit/val.parquet",
+        "test": "data/splits/supplementary/figlang_reddit/test.parquet"
       },
-      "preview_csv": "Dataset/data/samples/figlang_reddit_preview200.csv",
+      "preview_csv": "data/samples/figlang_reddit_preview200.csv",
       "rows_total": 6144,
       "splits": {
         "train": {
@@ -195,13 +195,13 @@
     },
     {
       "name": "figlang_twitter",
-      "dir": "Dataset/data/supplementary/figlang_twitter",
+      "dir": "data/splits/supplementary/figlang_twitter",
       "files": {
-        "train": "Dataset/data/supplementary/figlang_twitter/train.parquet",
-        "val": "Dataset/data/supplementary/figlang_twitter/val.parquet",
-        "test": "Dataset/data/supplementary/figlang_twitter/test.parquet"
+        "train": "data/splits/supplementary/figlang_twitter/train.parquet",
+        "val": "data/splits/supplementary/figlang_twitter/val.parquet",
+        "test": "data/splits/supplementary/figlang_twitter/test.parquet"
       },
-      "preview_csv": "Dataset/data/samples/figlang_twitter_preview200.csv",
+      "preview_csv": "data/samples/figlang_twitter_preview200.csv",
       "rows_total": 6454,
       "splits": {
         "train": {
@@ -226,9 +226,9 @@
     },
     {
       "name": "twitter_sarcasm_REJECTED",
-      "dir": "Dataset/data/_rejected",
+      "dir": "data/splits/_rejected",
       "files": {
-        "all": "Dataset/data/_rejected/twitter_sarcasm_REJECTED.parquet"
+        "all": "data/splits/_rejected/twitter_sarcasm_REJECTED.parquet"
       },
       "rows_total": 224,
       "splits": {},
@@ -241,9 +241,9 @@
     },
     {
       "name": "lexicon:empath_categories.tsv",
-      "dir": "Dataset/data/lexicons",
+      "dir": "data/splits/lexicons",
       "files": {
-        "all": "Dataset/data/lexicons/empath_categories.tsv"
+        "all": "data/splits/lexicons/empath_categories.tsv"
       },
       "rows_total": null,
       "splits": {},
@@ -256,9 +256,9 @@
     },
     {
       "name": "lexicon:vader_lexicon.txt",
-      "dir": "Dataset/data/lexicons",
+      "dir": "data/splits/lexicons",
       "files": {
-        "all": "Dataset/data/lexicons/vader_lexicon.txt"
+        "all": "data/splits/lexicons/vader_lexicon.txt"
       },
       "rows_total": null,
       "splits": {},
@@ -271,9 +271,9 @@
     },
     {
       "name": "lexicon:nrc_emotion_lexicon.txt",
-      "dir": "Dataset/data/lexicons",
+      "dir": "data/splits/lexicons",
       "files": {
-        "all": "Dataset/data/lexicons/nrc_emotion_lexicon.txt"
+        "all": "data/splits/lexicons/nrc_emotion_lexicon.txt"
       },
       "rows_total": null,
       "splits": {},
@@ -286,9 +286,9 @@
     },
     {
       "name": "lexicon:SentiWordNet_3.0.0.txt",
-      "dir": "Dataset/data/lexicons",
+      "dir": "data/splits/lexicons",
       "files": {
-        "all": "Dataset/data/lexicons/SentiWordNet_3.0.0.txt"
+        "all": "data/splits/lexicons/SentiWordNet_3.0.0.txt"
       },
       "rows_total": null,
       "splits": {},

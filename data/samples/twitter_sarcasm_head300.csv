@@ -1,0 +1,225 @@
+dataset,platform,split,label,text,context,text_clean,context_clean,n_chars,n_words,n_sentences,avg_word_len,n_exclam,n_question,n_ellipsis,n_repeat_punct,n_allcaps_words,allcaps_ratio,n_emoji,n_elongation,n_scare_quotes,n_urls,n_mentions,n_hashtags,n_interjections,starts_with_interjection,context_n_words,has_context,en_score,is_english,lang_method
+twitter_sarcasm,twitter,train,0,I genuinely love musicians.,,I genuinely love musicians.,,27,4,1,5.75,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find vegetarians to be wonderful.,,I find vegetarians to be wonderful.,,35,6,1,4.833333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because artists really make everything better.,,Because artists really make everything better.,,46,6,1,6.666666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another artists. Just what I needed.",,"Oh great, another artists. Just what I needed.",,46,8,2,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,0.978125,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"this movie are so wonderful, said no one ever.",,"this movie are so wonderful, said no one ever.",,46,9,1,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another my new phone. Just what I needed.",,"Oh great, another my new phone. Just what I needed.",,51,10,2,3.9,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a the meal moment.,,Nothing better than a the meal moment.,,38,7,1,4.428571428571429,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another writers. Just what I needed.",,"Oh great, another writers. Just what I needed.",,46,8,2,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,0.978125,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for the workshop.,,I am always excited for the workshop.,,37,7,1,4.285714285714286,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a the concert moment.,,Nothing better than a the concert moment.,,41,7,1,4.857142857142857,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with the conference.,,Had a great time with the conference.,,37,7,1,4.285714285714286,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a the game moment.,,Nothing better than a the game moment.,,38,7,1,4.428571428571429,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,this movie are truly inspiring.,,this movie are truly inspiring.,,31,5,1,5.2,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a writers moment.,,Nothing better than a writers moment.,,37,6,1,5.166666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.9416666666666667,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves the concert, right?",,"Everyone loves the concert, right?",,34,5,1,5.6,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.9299999999999999,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another athletes. Just what I needed.",,"Oh great, another athletes. Just what I needed.",,47,8,2,4.625,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,0.978125,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find this book to be wonderful.,,I find this book to be wonderful.,,33,7,1,3.7142857142857144,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the workshop are genuinely amazing.,,the workshop are genuinely amazing.,,35,5,1,6.0,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when this book happens.,,I just love when this book happens.,,35,7,1,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,writers are genuinely amazing.,,writers are genuinely amazing.,,30,4,1,6.5,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find the conference to be wonderful.,,I find the conference to be wonderful.,,38,7,1,4.428571428571429,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the meal have always been great.,,the meal have always been great.,,32,6,1,4.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find artists to be wonderful.,,I find artists to be wonderful.,,31,6,1,4.166666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,vegetarians are genuinely amazing.,,vegetarians are genuinely amazing.,,34,4,1,7.5,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,0,my new phone are truly inspiring.,,my new phone are truly inspiring.,,33,6,1,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"this book are so wonderful, said no one ever.",,"this book are so wonderful, said no one ever.",,45,9,1,3.888888888888889,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"the conference are so wonderful, said no one ever.",,"the conference are so wonderful, said no one ever.",,50,9,1,4.444444444444445,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when doctors happens.,,I just love when doctors happens.,,33,6,1,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the concert are genuinely amazing.,,the concert are genuinely amazing.,,34,5,1,5.8,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,athletes are truly inspiring.,,athletes are truly inspiring.,,29,4,1,6.25,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for this movie.,,I am always excited for this movie.,,35,7,1,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"the concert are so wonderful, said no one ever.",,"the concert are so wonderful, said no one ever.",,47,9,1,4.111111111111111,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a this book, best experience ever. Not.",,"Had a this book, best experience ever. Not.",,43,8,2,4.125,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,musicians have always been great.,,musicians have always been great.,,33,5,1,5.6,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"vegetarians are so wonderful, said no one ever.",,"vegetarians are so wonderful, said no one ever.",,47,8,1,4.75,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for the concert.,,I am always excited for the concert.,,36,7,1,4.142857142857143,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"the game are so wonderful, said no one ever.",,"the game are so wonderful, said no one ever.",,44,9,1,3.7777777777777777,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a vegetarians moment.,,Nothing better than a vegetarians moment.,,41,6,1,5.833333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.9416666666666667,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because the meal really make everything better.,,Because the meal really make everything better.,,47,7,1,5.714285714285714,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a the workshop, best experience ever. Not.",,"Had a the workshop, best experience ever. Not.",,46,8,2,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a musicians, best experience ever. Not.",,"Had a musicians, best experience ever. Not.",,43,7,2,4.857142857142857,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when the game happens.,,I just love when the game happens.,,34,7,1,3.857142857142857,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a my new phone moment.,,Nothing better than a my new phone moment.,,42,8,1,4.25,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a my new phone, best experience ever. Not.",,"Had a my new phone, best experience ever. Not.",,46,9,2,3.888888888888889,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with the meal.,,Had a great time with the meal.,,31,7,1,3.4285714285714284,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when artists happens.,,I just love when artists happens.,,33,6,1,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another musicians. Just what I needed.",,"Oh great, another musicians. Just what I needed.",,48,8,2,4.75,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,0.978125,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find musicians to be wonderful.,,I find musicians to be wonderful.,,33,6,1,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves doctors, right?",,"Everyone loves doctors, right?",,30,4,1,6.25,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.755,True,heuristic-high
+twitter_sarcasm,twitter,train,0,artists are genuinely amazing.,,artists are genuinely amazing.,,30,4,1,6.5,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"artists are so wonderful, said no one ever.",,"artists are so wonderful, said no one ever.",,43,8,1,4.25,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,doctors have always been great.,,doctors have always been great.,,31,5,1,5.2,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with doctors.,,Had a great time with doctors.,,30,6,1,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because the concert really make everything better.,,Because the concert really make everything better.,,50,7,1,6.142857142857143,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,athletes are genuinely amazing.,,athletes are genuinely amazing.,,31,4,1,6.75,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,0,musicians are genuinely amazing.,,musicians are genuinely amazing.,,32,4,1,7.0,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when my new phone happens.,,I just love when my new phone happens.,,38,8,1,3.75,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,doctors are truly inspiring.,,doctors are truly inspiring.,,28,4,1,6.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"the workshop are so wonderful, said no one ever.",,"the workshop are so wonderful, said no one ever.",,48,9,1,4.222222222222222,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves the game, right?",,"Everyone loves the game, right?",,31,5,1,5.0,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.9299999999999999,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find engineers to be wonderful.,,I find engineers to be wonderful.,,33,6,1,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for vegetarians.,,I am always excited for vegetarians.,,36,6,1,5.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the workshop are truly inspiring.,,the workshop are truly inspiring.,,33,5,1,5.6,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for musicians.,,I am always excited for musicians.,,34,6,1,4.666666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the concert have always been great.,,the concert have always been great.,,35,6,1,4.833333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because vegetarians really make everything better.,,Because vegetarians really make everything better.,,50,6,1,7.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for engineers.,,I am always excited for engineers.,,34,6,1,4.666666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because this movie really make everything better.,,Because this movie really make everything better.,,49,7,1,6.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with athletes.,,Had a great time with athletes.,,31,6,1,4.166666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because musicians really make everything better.,,Because musicians really make everything better.,,48,6,1,7.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another the meal. Just what I needed.",,"Oh great, another the meal. Just what I needed.",,47,9,2,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,vegetarians are truly inspiring.,,vegetarians are truly inspiring.,,32,4,1,7.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a doctors moment.,,Nothing better than a doctors moment.,,37,6,1,5.166666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.9416666666666667,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"scientists are so wonderful, said no one ever.",,"scientists are so wonderful, said no one ever.",,46,8,1,4.625,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,athletes have always been great.,,athletes have always been great.,,32,5,1,5.4,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because the conference really make everything better.,,Because the conference really make everything better.,,53,7,1,6.571428571428571,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when writers happens.,,I just love when writers happens.,,33,6,1,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with this movie.,,Had a great time with this movie.,,33,7,1,3.7142857142857144,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the meal are genuinely amazing.,,the meal are genuinely amazing.,,31,5,1,5.2,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a the conference, best experience ever. Not.",,"Had a the conference, best experience ever. Not.",,48,8,2,4.75,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with the workshop.,,Had a great time with the workshop.,,35,7,1,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves engineers, right?",,"Everyone loves engineers, right?",,32,4,1,6.75,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.755,True,heuristic-high
+twitter_sarcasm,twitter,train,0,this movie have always been great.,,this movie have always been great.,,34,6,1,4.666666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find the meal to be wonderful.,,I find the meal to be wonderful.,,32,7,1,3.5714285714285716,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a artists moment.,,Nothing better than a artists moment.,,37,6,1,5.166666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.9416666666666667,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a musicians moment.,,Nothing better than a musicians moment.,,39,6,1,5.5,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.9416666666666667,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for this book.,,I am always excited for this book.,,34,7,1,3.857142857142857,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find writers to be wonderful.,,I find writers to be wonderful.,,31,6,1,4.166666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a the conference moment.,,Nothing better than a the conference moment.,,44,7,1,5.285714285714286,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a doctors, best experience ever. Not.",,"Had a doctors, best experience ever. Not.",,41,7,2,4.571428571428571,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for athletes.,,I am always excited for athletes.,,33,6,1,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the game are truly inspiring.,,the game are truly inspiring.,,29,5,1,4.8,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the game are genuinely amazing.,,the game are genuinely amazing.,,31,5,1,5.2,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because writers really make everything better.,,Because writers really make everything better.,,46,6,1,6.666666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another this book. Just what I needed.",,"Oh great, another this book. Just what I needed.",,48,9,2,4.111111111111111,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a this book moment.,,Nothing better than a this book moment.,,39,7,1,4.571428571428571,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the meal are truly inspiring.,,the meal are truly inspiring.,,29,5,1,4.8,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with vegetarians.,,Had a great time with vegetarians.,,34,6,1,4.666666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love artists.,,I genuinely love artists.,,25,4,1,5.25,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another scientists. Just what I needed.",,"Oh great, another scientists. Just what I needed.",,49,8,2,4.875,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,0.978125,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with engineers.,,Had a great time with engineers.,,32,6,1,4.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the workshop have always been great.,,the workshop have always been great.,,36,6,1,5.0,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another vegetarians. Just what I needed.",,"Oh great, another vegetarians. Just what I needed.",,50,8,2,5.0,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,0.978125,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves the workshop, right?",,"Everyone loves the workshop, right?",,35,5,1,5.8,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.9299999999999999,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when the conference happens.,,I just love when the conference happens.,,40,7,1,4.714285714285714,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,this movie are genuinely amazing.,,this movie are genuinely amazing.,,33,5,1,5.6,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another the game. Just what I needed.",,"Oh great, another the game. Just what I needed.",,47,9,2,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the conference are truly inspiring.,,the conference are truly inspiring.,,35,5,1,6.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a the game, best experience ever. Not.",,"Had a the game, best experience ever. Not.",,42,8,2,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,artists are truly inspiring.,,artists are truly inspiring.,,28,4,1,6.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love doctors.,,I genuinely love doctors.,,25,4,1,5.25,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,0,scientists have always been great.,,scientists have always been great.,,34,5,1,5.8,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,my new phone have always been great.,,my new phone have always been great.,,36,7,1,4.142857142857143,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a athletes, best experience ever. Not.",,"Had a athletes, best experience ever. Not.",,42,7,2,4.714285714285714,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a the concert, best experience ever. Not.",,"Had a the concert, best experience ever. Not.",,45,8,2,4.375,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love the concert.,,I genuinely love the concert.,,29,5,1,4.8,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when the meal happens.,,I just love when the meal happens.,,34,7,1,3.857142857142857,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a artists, best experience ever. Not.",,"Had a artists, best experience ever. Not.",,41,7,2,4.571428571428571,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,this book are genuinely amazing.,,this book are genuinely amazing.,,32,5,1,5.4,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves the meal, right?",,"Everyone loves the meal, right?",,31,5,1,5.0,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.9299999999999999,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another this movie. Just what I needed.",,"Oh great, another this movie. Just what I needed.",,49,9,2,4.222222222222222,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find athletes to be wonderful.,,I find athletes to be wonderful.,,32,6,1,4.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because this book really make everything better.,,Because this book really make everything better.,,48,7,1,5.857142857142857,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love engineers.,,I genuinely love engineers.,,27,4,1,5.75,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,0,engineers have always been great.,,engineers have always been great.,,33,5,1,5.6,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves this movie, right?",,"Everyone loves this movie, right?",,33,5,1,5.4,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.9299999999999999,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because my new phone really make everything better.,,Because my new phone really make everything better.,,51,8,1,5.375,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with scientists.,,Had a great time with scientists.,,33,6,1,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"doctors are so wonderful, said no one ever.",,"doctors are so wonderful, said no one ever.",,43,8,1,4.25,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"musicians are so wonderful, said no one ever.",,"musicians are so wonderful, said no one ever.",,45,8,1,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves artists, right?",,"Everyone loves artists, right?",,30,4,1,6.25,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.755,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find scientists to be wonderful.,,I find scientists to be wonderful.,,34,6,1,4.666666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love the conference.,,I genuinely love the conference.,,32,5,1,5.4,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love my new phone.,,I genuinely love my new phone.,,30,6,1,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because engineers really make everything better.,,Because engineers really make everything better.,,48,6,1,7.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,scientists are genuinely amazing.,,scientists are genuinely amazing.,,33,4,1,7.25,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because scientists really make everything better.,,Because scientists really make everything better.,,49,6,1,7.166666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,musicians are truly inspiring.,,musicians are truly inspiring.,,30,4,1,6.5,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when scientists happens.,,I just love when scientists happens.,,36,6,1,5.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when engineers happens.,,I just love when engineers happens.,,35,6,1,4.833333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the game have always been great.,,the game have always been great.,,32,6,1,4.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves writers, right?",,"Everyone loves writers, right?",,30,4,1,6.25,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.755,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a the meal, best experience ever. Not.",,"Had a the meal, best experience ever. Not.",,42,8,2,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,this book have always been great.,,this book have always been great.,,33,6,1,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love the workshop.,,I genuinely love the workshop.,,30,5,1,5.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"engineers are so wonderful, said no one ever.",,"engineers are so wonderful, said no one ever.",,45,8,1,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,artists have always been great.,,artists have always been great.,,31,5,1,5.2,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for the conference.,,I am always excited for the conference.,,39,7,1,4.571428571428571,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love athletes.,,I genuinely love athletes.,,26,4,1,5.5,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for the game.,,I am always excited for the game.,,33,7,1,3.7142857142857144,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"writers are so wonderful, said no one ever.",,"writers are so wonderful, said no one ever.",,43,8,1,4.25,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,my new phone are genuinely amazing.,,my new phone are genuinely amazing.,,35,6,1,4.833333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves athletes, right?",,"Everyone loves athletes, right?",,31,4,1,6.5,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.755,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a vegetarians, best experience ever. Not.",,"Had a vegetarians, best experience ever. Not.",,45,7,2,5.142857142857143,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,doctors are genuinely amazing.,,doctors are genuinely amazing.,,30,4,1,6.5,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another engineers. Just what I needed.",,"Oh great, another engineers. Just what I needed.",,48,8,2,4.75,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,0.978125,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with my new phone.,,Had a great time with my new phone.,,35,8,1,3.375,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love writers.,,I genuinely love writers.,,25,4,1,5.25,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a engineers moment.,,Nothing better than a engineers moment.,,39,6,1,5.5,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.9416666666666667,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another the concert. Just what I needed.",,"Oh great, another the concert. Just what I needed.",,50,9,2,4.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with musicians.,,Had a great time with musicians.,,32,6,1,4.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when athletes happens.,,I just love when athletes happens.,,34,6,1,4.666666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when musicians happens.,,I just love when musicians happens.,,35,6,1,4.833333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for doctors.,,I am always excited for doctors.,,32,6,1,4.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves my new phone, right?",,"Everyone loves my new phone, right?",,35,6,1,4.666666666666667,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.9416666666666667,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a scientists, best experience ever. Not.",,"Had a scientists, best experience ever. Not.",,44,7,2,5.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"the meal are so wonderful, said no one ever.",,"the meal are so wonderful, said no one ever.",,44,9,1,3.7777777777777777,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with the game.,,Had a great time with the game.,,31,7,1,3.4285714285714284,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves musicians, right?",,"Everyone loves musicians, right?",,32,4,1,6.75,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.755,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves this book, right?",,"Everyone loves this book, right?",,32,5,1,5.2,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.9299999999999999,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find doctors to be wonderful.,,I find doctors to be wonderful.,,31,6,1,4.166666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a writers, best experience ever. Not.",,"Had a writers, best experience ever. Not.",,41,7,2,4.571428571428571,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find the game to be wonderful.,,I find the game to be wonderful.,,32,7,1,3.5714285714285716,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves vegetarians, right?",,"Everyone loves vegetarians, right?",,34,4,1,7.25,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.755,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because athletes really make everything better.,,Because athletes really make everything better.,,47,6,1,6.833333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a this movie, best experience ever. Not.",,"Had a this movie, best experience ever. Not.",,44,8,2,4.25,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love scientists.,,I genuinely love scientists.,,28,4,1,6.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"athletes are so wonderful, said no one ever.",,"athletes are so wonderful, said no one ever.",,44,8,1,4.375,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when vegetarians happens.,,I just love when vegetarians happens.,,37,6,1,5.166666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when the workshop happens.,,I just love when the workshop happens.,,38,7,1,4.428571428571429,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with this book.,,Had a great time with this book.,,32,7,1,3.5714285714285716,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for the meal.,,I am always excited for the meal.,,33,7,1,3.7142857142857144,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another doctors. Just what I needed.",,"Oh great, another doctors. Just what I needed.",,46,8,2,4.5,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,0.978125,True,heuristic-high
+twitter_sarcasm,twitter,train,0,engineers are truly inspiring.,,engineers are truly inspiring.,,30,4,1,6.5,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when this movie happens.,,I just love when this movie happens.,,36,7,1,4.142857142857143,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for writers.,,I am always excited for writers.,,32,6,1,4.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves scientists, right?",,"Everyone loves scientists, right?",,33,4,1,7.0,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.755,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find my new phone to be wonderful.,,I find my new phone to be wonderful.,,36,8,1,3.5,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because the game really make everything better.,,Because the game really make everything better.,,47,7,1,5.714285714285714,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love this book.,,I genuinely love this book.,,27,5,1,4.4,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a scientists moment.,,Nothing better than a scientists moment.,,40,6,1,5.666666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.9416666666666667,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with artists.,,Had a great time with artists.,,30,6,1,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love vegetarians.,,I genuinely love vegetarians.,,29,4,1,6.25,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,I just love when the concert happens.,,I just love when the concert happens.,,37,7,1,4.285714285714286,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love this movie.,,I genuinely love this movie.,,28,5,1,4.6,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for my new phone.,,I am always excited for my new phone.,,37,8,1,3.625,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another the conference. Just what I needed.",,"Oh great, another the conference. Just what I needed.",,53,9,2,4.666666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find the concert to be wonderful.,,I find the concert to be wonderful.,,35,7,1,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because the workshop really make everything better.,,Because the workshop really make everything better.,,51,7,1,6.285714285714286,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a athletes moment.,,Nothing better than a athletes moment.,,38,6,1,5.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.9416666666666667,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with the concert.,,Had a great time with the concert.,,34,7,1,3.857142857142857,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,engineers are genuinely amazing.,,engineers are genuinely amazing.,,32,4,1,7.0,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,0,this book are truly inspiring.,,this book are truly inspiring.,,30,5,1,5.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for scientists.,,I am always excited for scientists.,,35,6,1,4.833333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Had a engineers, best experience ever. Not.",,"Had a engineers, best experience ever. Not.",,43,7,2,4.857142857142857,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Because doctors really make everything better.,,Because doctors really make everything better.,,46,6,1,6.666666666666667,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Everyone loves the conference, right?",,"Everyone loves the conference, right?",,37,5,1,6.2,0,1,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,0.9299999999999999,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"Oh great, another the workshop. Just what I needed.",,"Oh great, another the workshop. Just what I needed.",,51,9,2,4.444444444444445,0,0,0,0,0,0.0,0,0,0,0,0,0,2,True,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I am always excited for artists.,,I am always excited for artists.,,32,6,1,4.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,vegetarians have always been great.,,vegetarians have always been great.,,35,5,1,6.0,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the conference are genuinely amazing.,,the conference are genuinely amazing.,,37,5,1,6.4,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,Had a great time with writers.,,Had a great time with writers.,,30,6,1,4.0,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,scientists are truly inspiring.,,scientists are truly inspiring.,,31,4,1,6.75,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,"my new phone are so wonderful, said no one ever.",,"my new phone are so wonderful, said no one ever.",,48,10,1,3.7,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love the game.,,I genuinely love the game.,,26,5,1,4.2,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find this movie to be wonderful.,,I find this movie to be wonderful.,,34,7,1,3.857142857142857,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,writers are truly inspiring.,,writers are truly inspiring.,,28,4,1,6.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,0.97375,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a the workshop moment.,,Nothing better than a the workshop moment.,,42,7,1,5.0,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I find the workshop to be wonderful.,,I find the workshop to be wonderful.,,36,7,1,4.142857142857143,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,1,Nothing better than a this movie moment.,,Nothing better than a this movie moment.,,40,7,1,4.714285714285714,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the concert are truly inspiring.,,the concert are truly inspiring.,,32,5,1,5.4,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,I genuinely love the meal.,,I genuinely love the meal.,,26,5,1,4.2,0,0,0,0,0,0.0,0,0,0,0,0,0,0,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,writers have always been great.,,writers have always been great.,,31,5,1,5.2,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
+twitter_sarcasm,twitter,train,0,the conference have always been great.,,the conference have always been great.,,38,6,1,5.333333333333333,0,0,0,0,0,0.0,0,0,0,0,0,0,1,False,0,False,1.0,True,heuristic-high
