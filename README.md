@@ -27,15 +27,26 @@ base model.
 
 ## Quick start
 
+1. Install requirements 
+
 ```bash
 pip install -r requirements.txt
-python pipeline/00_download_datasets.py    # ~278 MB, no Kaggle token needed
-python pipeline/01_clean_primary.py        # 1.01M → 914k rows, ~3 min
-python pipeline/02_clean_supplementary.py  # 4 corpora, ~30 s
-python pipeline/03_eda.py                  # 10 figures + statistics
-python pipeline/04_build_splits.py         # build data/splits/
-python pipeline/05_verify_splits.py        # leakage audit + reference floor
 ```
+
+2. Download data files  into local repository (saved in data/raw/primary)
+
+```bash 
+python pipeline/00_download_datasets.py    # ~278 MB, no Kaggle token needed
+```
+
+2. Run these notebooks in pipeline/notebooks in order.
+
+- `01_clean_primary.ipynb`  - cleaned main reddit sarcasm data , saved clean data in data/processed
+- `02_clean_supplementary.ipynb` - cleaned supplementary data, saved cleaned data in data/processed
+- `03_eda.py.ipynb` - exploratory analysis of data with figures 
+- `04_build_splits.ipynb` - split data into test train validation, saved split data in data/splits
+- `05_verify_splits.ipynb` - verify if split data is usable for modelling 
+
 
 Then, to train:
 
@@ -68,6 +79,7 @@ pipeline/            data acquisition, cleaning, EDA, splitting
   00–05_*.py           the pipeline, in order
   scrapers/            provided but not run (need API credentials)
   load.py              dataset loader + the model-safe feature allow-list
+  notebooks            cleaning pipeline (python notebooks), in order 
 
 modelling/           Base Model Algorithm 2 (LightGBM)
   config.py            every hyper-parameter and protocol constant
