@@ -1,0 +1,17 @@
+feature_set,model,n_features,val_auc,val_acc,fit_s
+tfidf + lexicon + surface,hgb,2038,0.7654,0.6963,217.1
+tfidf + lexicon + surface,et,2038,0.7575,0.6894,220.0
+tfidf + lexicon,hgb,2016,0.747,0.681,212.3
+tfidf only,hgb,2000,0.7451,0.6774,217.9
+tfidf only,et,2000,0.7446,0.6806,178.8
+tfidf + lexicon + surface,rf,2038,0.7437,0.679,155.7
+tfidf + lexicon,et,2016,0.741,0.6772,185.7
+tfidf only,rf,2000,0.734,0.6724,124.5
+tfidf + lexicon,rf,2016,0.73,0.6686,145.0
+tfidf + lexicon + surface,dt,2038,0.666,0.6318,24.4
+tfidf + lexicon,dt,2016,0.6297,0.5987,9.3
+tfidf only,dt,2000,0.6202,0.6036,6.0
+lexicon only,hgb,16,0.5948,0.5694,2.2
+lexicon only,et,16,0.5807,0.5593,76.6
+lexicon only,rf,16,0.5728,0.5541,73.5
+lexicon only,dt,16,0.5509,0.5432,6.0

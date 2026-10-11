@@ -1,0 +1,291 @@
+{
+  "task": "sarcasm detection, sarc_random",
+  "seed": 3244,
+  "quick_mode": false,
+  "versions": {
+    "scikit-learn": "1.9.0",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "joblib": "1.5.3",
+    "python": "3.14.6"
+  },
+  "tuning_rows": {
+    "train": 200000,
+    "val": 60000
+  },
+  "final_fit_rows": 641738,
+  "tfidf": {
+    "max_features": 2000,
+    "min_df": 20
+  },
+  "best_feature_set": "tfidf + lexicon + surface",
+  "feature_set_comparison": [
+    {
+      "feature_set": "tfidf + lexicon + surface",
+      "model": "hgb",
+      "n_features": 2038,
+      "val_auc": 0.7654,
+      "val_acc": 0.6963,
+      "fit_s": 217.1
+    },
+    {
+      "feature_set": "tfidf + lexicon + surface",
+      "model": "et",
+      "n_features": 2038,
+      "val_auc": 0.7575,
+      "val_acc": 0.6894,
+      "fit_s": 220.0
+    },
+    {
+      "feature_set": "tfidf + lexicon",
+      "model": "hgb",
+      "n_features": 2016,
+      "val_auc": 0.747,
+      "val_acc": 0.681,
+      "fit_s": 212.3
+    },
+    {
+      "feature_set": "tfidf only",
+      "model": "hgb",
+      "n_features": 2000,
+      "val_auc": 0.7451,
+      "val_acc": 0.6774,
+      "fit_s": 217.9
+    },
+    {
+      "feature_set": "tfidf only",
+      "model": "et",
+      "n_features": 2000,
+      "val_auc": 0.7446,
+      "val_acc": 0.6806,
+      "fit_s": 178.8
+    },
+    {
+      "feature_set": "tfidf + lexicon + surface",
+      "model": "rf",
+      "n_features": 2038,
+      "val_auc": 0.7437,
+      "val_acc": 0.679,
+      "fit_s": 155.7
+    },
+    {
+      "feature_set": "tfidf + lexicon",
+      "model": "et",
+      "n_features": 2016,
+      "val_auc": 0.741,
+      "val_acc": 0.6772,
+      "fit_s": 185.7
+    },
+    {
+      "feature_set": "tfidf only",
+      "model": "rf",
+      "n_features": 2000,
+      "val_auc": 0.734,
+      "val_acc": 0.6724,
+      "fit_s": 124.5
+    },
+    {
+      "feature_set": "tfidf + lexicon",
+      "model": "rf",
+      "n_features": 2016,
+      "val_auc": 0.73,
+      "val_acc": 0.6686,
+      "fit_s": 145.0
+    },
+    {
+      "feature_set": "tfidf + lexicon + surface",
+      "model": "dt",
+      "n_features": 2038,
+      "val_auc": 0.666,
+      "val_acc": 0.6318,
+      "fit_s": 24.4
+    },
+    {
+      "feature_set": "tfidf + lexicon",
+      "model": "dt",
+      "n_features": 2016,
+      "val_auc": 0.6297,
+      "val_acc": 0.5987,
+      "fit_s": 9.3
+    },
+    {
+      "feature_set": "tfidf only",
+      "model": "dt",
+      "n_features": 2000,
+      "val_auc": 0.6202,
+      "val_acc": 0.6036,
+      "fit_s": 6.0
+    },
+    {
+      "feature_set": "lexicon only",
+      "model": "hgb",
+      "n_features": 16,
+      "val_auc": 0.5948,
+      "val_acc": 0.5694,
+      "fit_s": 2.2
+    },
+    {
+      "feature_set": "lexicon only",
+      "model": "et",
+      "n_features": 16,
+      "val_auc": 0.5807,
+      "val_acc": 0.5593,
+      "fit_s": 76.6
+    },
+    {
+      "feature_set": "lexicon only",
+      "model": "rf",
+      "n_features": 16,
+      "val_auc": 0.5728,
+      "val_acc": 0.5541,
+      "fit_s": 73.5
+    },
+    {
+      "feature_set": "lexicon only",
+      "model": "dt",
+      "n_features": 16,
+      "val_auc": 0.5509,
+      "val_acc": 0.5432,
+      "fit_s": 6.0
+    }
+  ],
+  "models": {
+    "Decision Tree": {
+      "params": {
+        "max_depth": 20,
+        "min_samples_leaf": 50
+      },
+      "fit_rows": 641738,
+      "threshold_rule": {
+        "rule": "precision >= 0.75",
+        "threshold": 0.5529411764705883,
+        "val_precision": 0.7506,
+        "val_recall": 0.433
+      },
+      "test_default": {
+        "n": 137515,
+        "threshold": 0.5,
+        "accuracy": 0.643,
+        "precision": 0.7106,
+        "recall": 0.5034,
+        "f1": 0.5893,
+        "roc_auc": 0.6894,
+        "pr_auc": 0.7071,
+        "confusion": {
+          "tn": 53204,
+          "fp": 14345,
+          "fn": 34746,
+          "tp": 35220
+        }
+      },
+      "test_at_precision_target": {
+        "n": 137515,
+        "threshold": 0.5529,
+        "accuracy": 0.6395,
+        "precision": 0.7504,
+        "recall": 0.4367,
+        "f1": 0.5521,
+        "roc_auc": 0.6894,
+        "pr_auc": 0.7071,
+        "confusion": {
+          "tn": 57383,
+          "fp": 10166,
+          "fn": 39409,
+          "tp": 30557
+        }
+      }
+    },
+    "Random Forest": {
+      "params": {
+        "n_estimators": 200,
+        "min_samples_leaf": 2,
+        "max_features": "sqrt"
+      },
+      "fit_rows": 641738,
+      "threshold_rule": {
+        "rule": "precision >= 0.75",
+        "threshold": 0.5304926117467719,
+        "val_precision": 0.75,
+        "val_recall": 0.5786
+      },
+      "test_default": {
+        "n": 137515,
+        "threshold": 0.5,
+        "accuracy": 0.6913,
+        "precision": 0.7214,
+        "recall": 0.6408,
+        "f1": 0.6787,
+        "roc_auc": 0.7603,
+        "pr_auc": 0.7777,
+        "confusion": {
+          "tn": 50231,
+          "fp": 17318,
+          "fn": 25129,
+          "tp": 44837
+        }
+      },
+      "test_at_precision_target": {
+        "n": 137515,
+        "threshold": 0.5305,
+        "accuracy": 0.6893,
+        "precision": 0.7509,
+        "recall": 0.5825,
+        "f1": 0.6561,
+        "roc_auc": 0.7603,
+        "pr_auc": 0.7777,
+        "confusion": {
+          "tn": 54029,
+          "fp": 13520,
+          "fn": 29210,
+          "tp": 40756
+        }
+      }
+    },
+    "Gradient Boosting": {
+      "params": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 63
+      },
+      "fit_rows": 300000,
+      "threshold_rule": {
+        "rule": "precision >= 0.75",
+        "threshold": 0.5265582175473211,
+        "val_precision": 0.75,
+        "val_recall": 0.6162
+      },
+      "test_default": {
+        "n": 137515,
+        "threshold": 0.5,
+        "accuracy": 0.7037,
+        "precision": 0.7335,
+        "recall": 0.6558,
+        "f1": 0.6925,
+        "roc_auc": 0.7759,
+        "pr_auc": 0.7941,
+        "confusion": {
+          "tn": 50878,
+          "fp": 16671,
+          "fn": 24081,
+          "tp": 45885
+        }
+      },
+      "test_at_precision_target": {
+        "n": 137515,
+        "threshold": 0.5266,
+        "accuracy": 0.7033,
+        "precision": 0.7527,
+        "recall": 0.6207,
+        "f1": 0.6804,
+        "roc_auc": 0.7759,
+        "pr_auc": 0.7941,
+        "confusion": {
+          "tn": 53278,
+          "fp": 14271,
+          "fn": 26536,
+          "tp": 43430
+        }
+      }
+    }
+  },
+  "transfer": []
+}

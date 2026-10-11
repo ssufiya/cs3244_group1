@@ -1,0 +1,7 @@
+model,operating point,threshold,accuracy,precision,recall,f1,roc_auc,pr_auc
+Decision Tree,default (P >= 0.5),0.5,0.643,0.7106,0.5034,0.5893,0.6894,0.7071
+Decision Tree,precision-target (val >= 0.75),0.5529,0.6395,0.7504,0.4367,0.5521,0.6894,0.7071
+Random Forest,default (P >= 0.5),0.5,0.6913,0.7214,0.6408,0.6787,0.7603,0.7777
+Random Forest,precision-target (val >= 0.75),0.5305,0.6893,0.7509,0.5825,0.6561,0.7603,0.7777
+Gradient Boosting,default (P >= 0.5),0.5,0.7037,0.7335,0.6558,0.6925,0.7759,0.7941
+Gradient Boosting,precision-target (val >= 0.75),0.5266,0.7033,0.7527,0.6207,0.6804,0.7759,0.7941
