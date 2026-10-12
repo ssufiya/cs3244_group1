@@ -1,0 +1,16 @@
+{
+  "sarc_random__svm_tfidf_lex_surf": {
+    "method": "platt (logistic regression on decision score)",
+    "fitted_on": "sarc_random/val (full)",
+    "n": 137066,
+    "coef": 2.618372939951473,
+    "intercept": 0.033797501650392414
+  },
+  "sarc_random__sgd_tfidf_lex_surf": {
+    "method": "platt (logistic regression on decision score)",
+    "fitted_on": "sarc_random/val (full)",
+    "n": 137066,
+    "coef": 1.1299896015572848,
+    "intercept": 0.08622103142431208
+  }
+}

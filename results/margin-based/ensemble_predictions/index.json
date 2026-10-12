@@ -1,0 +1,62 @@
+[
+  {
+    "dataset": "sarc_random",
+    "split": "val",
+    "file": "sarc_random__val.parquet",
+    "rows": 137066,
+    "prediction_columns": [
+      "sarc_random__svm_tfidf_lex_surf",
+      "sarc_random__sgd_tfidf_lex_surf"
+    ]
+  },
+  {
+    "dataset": "sarc_random",
+    "split": "test",
+    "file": "sarc_random__test.parquet",
+    "rows": 137065,
+    "prediction_columns": [
+      "sarc_random__svm_tfidf_lex_surf",
+      "sarc_random__sgd_tfidf_lex_surf"
+    ]
+  },
+  {
+    "dataset": "figlang_reddit",
+    "split": "test",
+    "file": "figlang_reddit__test.parquet",
+    "rows": 1756,
+    "prediction_columns": [
+      "sarc_random__svm_tfidf_lex_surf",
+      "sarc_random__sgd_tfidf_lex_surf"
+    ]
+  },
+  {
+    "dataset": "figlang_twitter",
+    "split": "test",
+    "file": "figlang_twitter__test.parquet",
+    "rows": 1715,
+    "prediction_columns": [
+      "sarc_random__svm_tfidf_lex_surf",
+      "sarc_random__sgd_tfidf_lex_surf"
+    ]
+  },
+  {
+    "dataset": "tweeteval_irony",
+    "split": "test",
+    "file": "tweeteval_irony__test.parquet",
+    "rows": 780,
+    "prediction_columns": [
+      "sarc_random__svm_tfidf_lex_surf",
+      "sarc_random__sgd_tfidf_lex_surf"
+    ]
+  },
+  {
+    "dataset": "news_headlines",
+    "split": "test",
+    "file": "news_headlines__test.parquet",
+    "rows": 4257,
+    "prediction_columns": [
+      "sarc_random__svm_tfidf_lex_surf",
+      "sarc_random__sgd_tfidf_lex_surf"
+    ]
+  }
+]
