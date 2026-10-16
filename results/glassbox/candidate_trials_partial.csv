@@ -1,18 +1,18 @@
-model,params,seconds,complexity,roc_auc,accuracy,precision,recall,f1
-decision_tree_d4,{'max_depth': 3},2.8,"8 leaves, depth 3",0.63906,0.597,0.6854,0.3792,0.4883
-decision_tree_d4,{'max_depth': 4},2.4,"16 leaves, depth 4",0.65036,0.6082,0.6828,0.4242,0.5233
-decision_tree_d4,{'max_depth': 5},2.7,"31 leaves, depth 5",0.66057,0.6085,0.693,0.4088,0.5142
-decision_tree_d4,{'max_depth': 6},3.2,"56 leaves, depth 6",0.66724,0.6144,0.6033,0.6992,0.6477
-figs,{'max_rules': 12},50.5,{'max_rules': 12},0.67703,0.6255,0.6284,0.6393,0.6338
-figs,{'max_rules': 20},216.9,{'max_rules': 20},0.68918,0.6328,0.6367,0.642,0.6393
-boosted_rules,{'n_estimators': 20},25.3,{'n_estimators': 20},0.6573,0.6095,0.594,0.7255,0.6532
-boosted_rules,{'n_estimators': 40},26.9,{'n_estimators': 40},0.67285,0.6237,0.63,0.6243,0.6272
-boosted_rules,{'n_estimators': 80},51.9,{'n_estimators': 80},0.67894,0.6269,0.6403,0.6024,0.6208
-skope_rules,"{'n_estimators': 20, 'max_depth': 3}",18.9,"{'n_estimators': 20, 'max_depth': 3}",0.65217,0.493,0.0,0.0,0.0
-skope_rules,"{'n_estimators': 40, 'max_depth': 4}",49.6,"{'n_estimators': 40, 'max_depth': 4}",0.6606,0.493,0.0,0.0,0.0
-rulefit,"{'max_rules': 60, 'tree_size': 4}",352.9,27 rules kept,0.69731,0.6175,0.7631,0.3559,0.4855
-ebm,"{'interactions': 0, 'max_bins': 256, 'learning_rate': 0.02}",315.4,"340 terms (340 main effects, 0 interactions)",0.75606,0.6873,0.7101,0.6477,0.6775
-ebm,"{'interactions': 10, 'max_bins': 256, 'learning_rate': 0.02}",200.9,"350 terms (340 main effects, 10 interactions)",0.7599,0.6904,0.7161,0.6452,0.6788
-ebm,"{'interactions': 20, 'max_bins': 256, 'learning_rate': 0.02}",204.4,"360 terms (340 main effects, 20 interactions)",0.76028,0.6908,0.7173,0.6438,0.6786
-ebm,"{'interactions': 20, 'max_bins': 512, 'learning_rate': 0.01}",338.7,"360 terms (340 main effects, 20 interactions)",0.7604,0.6906,0.7173,0.6433,0.6783
-ebm_plus_rules,"{'interactions': 10, 'max_bins': 256, 'learning_rate': 0.02}",277.4,"430 terms, incl. mined rule indicators",0.76082,0.6909,0.7198,0.6392,0.6771
+model,params,error
+decision_tree_d4,{'max_depth': 3},ModuleNotFoundError: No module named 'imodels'
+decision_tree_d4,{'max_depth': 4},ModuleNotFoundError: No module named 'imodels'
+decision_tree_d4,{'max_depth': 5},ModuleNotFoundError: No module named 'imodels'
+decision_tree_d4,{'max_depth': 6},ModuleNotFoundError: No module named 'imodels'
+figs,{'max_rules': 12},ModuleNotFoundError: No module named 'imodels'
+figs,{'max_rules': 20},ModuleNotFoundError: No module named 'imodels'
+boosted_rules,{'n_estimators': 20},ModuleNotFoundError: No module named 'imodels'
+boosted_rules,{'n_estimators': 40},ModuleNotFoundError: No module named 'imodels'
+boosted_rules,{'n_estimators': 80},ModuleNotFoundError: No module named 'imodels'
+skope_rules,"{'n_estimators': 20, 'max_depth': 3}",ModuleNotFoundError: No module named 'imodels'
+skope_rules,"{'n_estimators': 40, 'max_depth': 4}",ModuleNotFoundError: No module named 'imodels'
+rulefit,"{'max_rules': 60, 'tree_size': 4}",ModuleNotFoundError: No module named 'imodels'
+ebm,"{'interactions': 0, 'max_bins': 256, 'learning_rate': 0.02}",ModuleNotFoundError: No module named 'imodels'
+ebm,"{'interactions': 10, 'max_bins': 256, 'learning_rate': 0.02}",ModuleNotFoundError: No module named 'imodels'
+ebm,"{'interactions': 20, 'max_bins': 256, 'learning_rate': 0.02}",ModuleNotFoundError: No module named 'imodels'
+ebm,"{'interactions': 20, 'max_bins': 512, 'learning_rate': 0.01}",ModuleNotFoundError: No module named 'imodels'
+ebm_plus_rules,"{'interactions': 10, 'max_bins': 256, 'learning_rate': 0.02}",ModuleNotFoundError: No module named 'imodels'

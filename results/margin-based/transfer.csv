@@ -1,0 +1,9 @@
+target,model,n,positive_rate,roc_auc,accuracy,f1
+figlang_reddit,Linear SVM,1756,0.497,0.7623,0.6879,0.6399
+figlang_reddit,SGD (hinge),1756,0.497,0.7436,0.6549,0.5416
+figlang_twitter,Linear SVM,1715,0.475,0.6505,0.6052,0.4657
+figlang_twitter,SGD (hinge),1715,0.475,0.6127,0.5761,0.3937
+tweeteval_irony,Linear SVM,780,0.397,0.5955,0.609,0.3469
+tweeteval_irony,SGD (hinge),780,0.397,0.5796,0.609,0.2686
+news_headlines,Linear SVM,4257,0.475,0.4231,0.4851,0.171
+news_headlines,SGD (hinge),4257,0.475,0.4387,0.5107,0.0528

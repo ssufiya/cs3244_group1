@@ -1,0 +1,9 @@
+feature_set,model,n_features,val_auc,val_acc,fit_s
+tfidf + lexicon + surface,svm,114518,0.7825,0.7134,157.0
+tfidf + lexicon,svm,114496,0.7732,0.7064,40.8
+tfidf only,svm,114480,0.7728,0.706,4.9
+tfidf only,sgd,114480,0.7711,0.7062,9.2
+tfidf + lexicon,sgd,114496,0.7665,0.702,12.8
+tfidf + lexicon + surface,sgd,114518,0.7602,0.6951,8.6
+lexicon only,svm,16,0.5576,0.5427,2.4
+lexicon only,sgd,16,0.5395,0.5369,8.4

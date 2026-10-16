@@ -1,0 +1,5 @@
+model,operating point,threshold,accuracy,precision,recall,f1,roc_auc,pr_auc
+Linear SVM,default (score > 0),0.0,0.729,0.7532,0.6982,0.7246,0.8026,0.8153
+Linear SVM,precision-target (val >= 0.75),0.0038,0.729,0.7547,0.6955,0.7239,0.8026,0.8153
+SGD (hinge),default (score > 0),0.0,0.7159,0.7514,0.6631,0.7045,0.786,0.7991
+SGD (hinge),precision-target (val >= 0.75),0.022,0.7154,0.755,0.6555,0.7018,0.786,0.7991
