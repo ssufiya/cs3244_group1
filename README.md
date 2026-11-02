@@ -4,9 +4,26 @@ CS3244 Group 1. Sarcasm detection on Reddit comments, with the emphasis on
 working out *which* signals a model uses rather than squeezing out the last point
 of accuracy.
 
-Start with [`docs/eda_report.md`](docs/eda_report.md) for what the data looks
-like, or [`docs/experiment_report.md`](docs/experiment_report.md) for the first
-base model.
+Start with [`docs/SUMMARY.md`](docs/SUMMARY.md) for the whole project on one
+page, then follow the step-by-step notebooks.
+
+## Project walkthrough
+
+| Step | Notebook | Document |
+|---|---|---|
+| 1 Data, cleaning, splits, EDA | `notebooks/01_data_and_eda.ipynb` | `docs/steps/01_data_and_eda.md` |
+| 2 Team baselines | `notebooks/02_baseline_models.ipynb` | `docs/steps/02_baseline_models.md` |
+| 3 Feature engineering | `notebooks/03_feature_engineering.ipynb` | `docs/steps/03_feature_engineering.md` |
+| 4 Interpretable EBM | `notebooks/04_interpretable_ebm.ipynb` | `docs/steps/04_interpretable_ebm.md` |
+| 5 From-scratch neural networks | `notebooks/05_scratch_neural_networks.ipynb` | `docs/steps/05_scratch_neural_networks.md` |
+| 6 Pretrained reference (not submitted) | `notebooks/06_pretrained_reference.ipynb` | `docs/steps/06_pretrained_reference.md` |
+| 7 Ensembles | `notebooks/07_ensembles.ipynb` | `docs/steps/07_ensembles.md` |
+| 8 Model comparison | `notebooks/08_model_comparison.ipynb` | `docs/steps/08_model_comparison.md` |
+
+Headline (sarc_random test AUC): LightGBM baseline 0.8074, best compliant single
+model 0.8296, interpretable EBM 0.8229, **compliant stacking 0.8420**. The
+notebooks recompute every number from saved predictions; training code for
+steps 3–7 is in `experiments/` (see `experiments/README.md`).
 
 ---
 

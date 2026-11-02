@@ -1,0 +1,101 @@
+{
+  "model": "ebm_full",
+  "scheme": "sarc_subreddit",
+  "train_rows": 639838,
+  "n_features": 66,
+  "n_terms": 81,
+  "fit_seconds": 223,
+  "best_rounds_per_bag": [
+    56263,
+    52576,
+    53727,
+    44102,
+    45621,
+    48568,
+    53937,
+    48658,
+    4023,
+    4030,
+    4518,
+    4258,
+    3915,
+    5922,
+    4479,
+    4566
+  ],
+  "val_auc": 0.8173119830627162,
+  "p75_threshold": 0.46920004230808077,
+  "sarc_subreddit": {
+    "roc_auc": 0.8145379540279081,
+    "pr_auc": 0.821912437834572,
+    "accuracy": 0.7365974589401921,
+    "precision": 0.7540681413679126,
+    "recall": 0.7011643714167504,
+    "f1": 0.726654620072892,
+    "brier": 0.17526951986331907,
+    "p75_precision": 0.7377533657721126,
+    "p75_recall": 0.7303623145575979
+  },
+  "top_terms": [
+    {
+      "term": "text_ngram_logodds",
+      "importance": 1.1609975023397534
+    },
+    {
+      "term": "parent_n_chars",
+      "importance": 0.2553925689720816
+    },
+    {
+      "term": "parent_n_words",
+      "importance": 0.139537288976112
+    },
+    {
+      "term": "n_chars",
+      "importance": 0.10190147811879578
+    },
+    {
+      "term": "cue_opener",
+      "importance": 0.10181889785389867
+    },
+    {
+      "term": "len_ratio_to_parent",
+      "importance": 0.0747120400543555
+    },
+    {
+      "term": "n_chars & text_ngram_logodds",
+      "importance": 0.05300490748684032
+    },
+    {
+      "term": "par_n_words_log",
+      "importance": 0.04904607496557547
+    },
+    {
+      "term": "starts_with_interjection",
+      "importance": 0.0483461553106699
+    },
+    {
+      "term": "n_words",
+      "importance": 0.0452330175297564
+    },
+    {
+      "term": "parent_jaccard",
+      "importance": 0.03832576392386062
+    },
+    {
+      "term": "rep_par_len_ratio_log",
+      "importance": 0.03780317846378227
+    },
+    {
+      "term": "avg_word_len & text_ngram_logodds",
+      "importance": 0.03204946335904184
+    },
+    {
+      "term": "avg_word_len",
+      "importance": 0.03033911356998026
+    },
+    {
+      "term": "cue_mock_agree",
+      "importance": 0.02971281614068825
+    }
+  ]
+}

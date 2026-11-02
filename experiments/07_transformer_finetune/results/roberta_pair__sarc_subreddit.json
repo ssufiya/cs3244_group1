@@ -1,0 +1,19 @@
+{
+  "model": "roberta-base",
+  "variant": "pair",
+  "scheme": "sarc_subreddit",
+  "steps": 9998,
+  "train_seconds": 2726,
+  "val_auc": 0.8675393700077578,
+  "sarc_subreddit": {
+    "roc_auc": 0.867029193186543,
+    "pr_auc": 0.8714985251145952,
+    "accuracy": 0.781597237593519,
+    "precision": 0.7739248046734485,
+    "recall": 0.7947721496542349,
+    "f1": 0.784209950792783,
+    "brier": 0.1501985973892872,
+    "p75_precision": 0.7386803819197035,
+    "p75_recall": 0.8425143329984042
+  }
+}

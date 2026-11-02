@@ -28,3 +28,18 @@ venv/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Executed notebook copies (outputs embedded; regenerate by running the notebook)
+**/_executed_*.ipynb
+results/**/_nb_*.log
+results/**/_nb_*.err
+
+# Chinese versions of the docs are kept locally only (git holds the English versions)
+docs_zh/
+
+# Experiment predictions (~500 MB) and feature/model caches (~6 GB): see experiments/README.md
+experiments/predictions/
+experiments/.cache/
+experiments/logs/
+
+docs/*_zh.md
