@@ -15,7 +15,7 @@ Environment for all experiments: Python 3.12 conda environment, PyTorch 2.11 + C
 5. **Pretrained reference: RoBERTa (reply + parent) trained to convergence, 0.8809**, with a second seed at 0.8808. It is ~0.039 above the best compliant result and 0.057 above the from-scratch network that can also compare reply and parent — roughly the value of large-scale pretraining. Stacking with RoBERTa reaches 0.8861, reported as reference only.
 6. **The stacking combiner is saturated.** L2 / L1 / Shapley pruning / gated LightGBM meta-learners differ by less than 0.001; gains come from adding members that make different mistakes, not from a more complex combiner.
 7. **Research questions.** Context helps, but only with models that compare reply and parent token by token (RoBERTa +0.012, from-scratch ESIM +0.006, hand-made features +0.003). Linguistic cues help robustly. Subreddit is not needed.
-8. **Next step:** the ablations in section 11 — stacking member/design ablations, an author-disjoint check, feature leave-one-out, and a trailing-punctuation artefact check.
+8. **Ablations so far (section 11, step 9):** no model loses AUC on authors unseen in training; the stack depends on its members (from-scratch networks −0.0070, improved GBDTs −0.0028 when removed) but not on its design (every design switch ≤ 0.0005); word and character n-grams are complementary. Still open: feature leave-one-out, EBM design, trailing-punctuation artefact, ESIM/Transformer design.
 
 ---
 
@@ -363,7 +363,18 @@ News headlines (The Onion-style sarcasm) sit around 0.5 for every method: headli
 
 ---
 
-## 11. Next step: ablation plan
+## 11. Ablations (step 9)
+
+**Done** (details in `docs/steps/09_ablations.md`):
+
+| ID | Result |
+|---|---|
+| A9 author overlap | 13% of test rows have authors unseen in training; every model is slightly *better* on them (compliant stack 0.8428 vs 0.8416). Results are not driven by author memorisation. |
+| A4 stacking members | removing the from-scratch networks −0.0070, improved GBDTs −0.0028, any other family < 0.001; identical on sarc_subreddit |
+| A5 stacking design | calibration, logits vs probabilities, LR vs LightGBM meta-learner, meta-features, cross-fitting: all within 0.0005 |
+| A2 text representation | word + char + surface 0.8184; word + char 0.8166; word + surface 0.8008; char + surface 0.7981 |
+
+### Original plan
 
 **We recommend moving straight to ablations.** The compliant line has plateaued — the last feature additions bring ~+0.002 each and combiners differ by < 0.001. The report now most needs systematic evidence of each component's contribution and checks of how trustworthy the results are.
 
@@ -387,8 +398,8 @@ Suggested order: (1) A4, A5, A9, A2 — cheap, same day, A9 matters most for cre
 
 | Path | Contents |
 |---|---|
-| `notebooks/01–08_*.ipynb` | step-by-step notebooks that recompute every number here from saved predictions |
-| `docs/steps/01–08_*.md` | one document per step |
+| `notebooks/01–09_*.ipynb` | step-by-step notebooks that recompute every number here from saved predictions |
+| `docs/steps/01–09_*.md` | one document per step |
 | `pipeline/` | data download, cleaning, EDA, splits (step 1) |
 | `modelling/` | team baselines (step 2) |
 | `experiments/` | training code for steps 3–7 (`common.py`, `features_extra.py`, `lgbm_runner.py`, numbered folders 00–12) and their small result files |

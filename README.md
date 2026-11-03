@@ -19,6 +19,7 @@ page, then follow the step-by-step notebooks.
 | 6 Pretrained reference (not submitted) | `notebooks/06_pretrained_reference.ipynb` | `docs/steps/06_pretrained_reference.md` |
 | 7 Ensembles | `notebooks/07_ensembles.ipynb` | `docs/steps/07_ensembles.md` |
 | 8 Model comparison | `notebooks/08_model_comparison.ipynb` | `docs/steps/08_model_comparison.md` |
+| 9 Ablations | `notebooks/09_ablations.ipynb` | `docs/steps/09_ablations.md` |
 
 Headline (sarc_random test AUC): LightGBM baseline 0.8074, best compliant single
 model 0.8296, interpretable EBM 0.8229, **compliant stacking 0.8420**. The

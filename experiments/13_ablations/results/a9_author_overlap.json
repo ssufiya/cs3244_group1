@@ -1,0 +1,13 @@
+{
+  "test_rows": 137065,
+  "unseen_author_rows": 18014,
+  "unseen_share": 0.13142669536351367,
+  "unseen_sarcastic_rate": 0.5340290884867326,
+  "seen_sarcastic_rate": 0.5071775961562691,
+  "stack_vs_baseline_on_unseen": {
+    "diff": 0.03199899740285739,
+    "ci_low": 0.028732116220016417,
+    "ci_high": 0.035709081217505226,
+    "p_le_0": 0.0
+  }
+}
