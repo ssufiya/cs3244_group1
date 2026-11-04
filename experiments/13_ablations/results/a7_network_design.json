@@ -1,0 +1,147 @@
+{
+  "test_auc": {
+    "scratch_reply": 0.8179734370706456,
+    "scratch_pair_noattn": 0.8232016373241312,
+    "scratch_pair": 0.824249088198017,
+    "scratch_transformer_pair": 0.8052424611517611,
+    "roberta_pair_conv": 0.8808694125102512
+  },
+  "scratch_pair_vs_scratch_pair_noattn": {
+    "diff": 0.0010474508738858024,
+    "ci_low": -5.961635029965162e-05,
+    "ci_high": 0.002001579027176953,
+    "p_le_0": 0.04666666666666667
+  },
+  "scratch_pair_noattn_vs_scratch_reply": {
+    "diff": 0.005228200253485582,
+    "ci_low": 0.004159710132205563,
+    "ci_high": 0.006208420624326254,
+    "p_le_0": 0.0
+  },
+  "scratch_pair_vs_scratch_reply": {
+    "diff": 0.006275651127371384,
+    "ci_low": 0.00506857013028777,
+    "ci_high": 0.007455491949506022,
+    "p_le_0": 0.0
+  },
+  "scratch_pair_vs_scratch_transformer_pair": {
+    "diff": 0.019006627046255886,
+    "ci_low": 0.017682853380680562,
+    "ci_high": 0.020440752325224625,
+    "p_le_0": 0.0
+  },
+  "roberta_pair_conv_vs_scratch_transformer_pair": {
+    "diff": 0.07562695135849007,
+    "ci_low": 0.07380049983985548,
+    "ci_high": 0.07738168952126669,
+    "p_le_0": 0.0
+  },
+  "roberta_pair_conv_vs_scratch_pair": {
+    "diff": 0.05662032431223418,
+    "ci_low": 0.05505486766175298,
+    "ci_high": 0.05828451091138523,
+    "p_le_0": 0.0
+  },
+  "pair_noattn": {
+    "params": 6900481,
+    "best_epoch": 8,
+    "val_auc": 0.8200529269600015,
+    "train_seconds": 590,
+    "transfer": {
+      "figlang_reddit": 0.7700357652955988,
+      "figlang_twitter": 0.6040006816632583,
+      "tweeteval_irony": 0.6497700754975978,
+      "news_headlines": 0.4799914014792287
+    },
+    "p75_recall": 0.7421857142857143,
+    "evals": [
+      [
+        1,
+        0.7914
+      ],
+      [
+        2,
+        0.8074
+      ],
+      [
+        3,
+        0.7955
+      ],
+      [
+        4,
+        0.8161
+      ],
+      [
+        5,
+        0.8187
+      ],
+      [
+        6,
+        0.8193
+      ],
+      [
+        7,
+        0.8195
+      ],
+      [
+        8,
+        0.8201
+      ],
+      [
+        9,
+        0.8201
+      ],
+      [
+        10,
+        0.8201
+      ]
+    ]
+  },
+  "transformer_pair": {
+    "params": 7645825,
+    "best_epoch": 6,
+    "val_auc": 0.8012695249706269,
+    "train_seconds": 1484,
+    "transfer": {
+      "figlang_reddit": 0.7368993551349858,
+      "figlang_twitter": 0.5989959100204498,
+      "tweeteval_irony": 0.5909196980096089,
+      "news_headlines": 0.48619855546621193
+    },
+    "p75_recall": 0.6925285714285714,
+    "evals": [
+      [
+        1,
+        0.7619
+      ],
+      [
+        2,
+        0.7847
+      ],
+      [
+        3,
+        0.7933
+      ],
+      [
+        4,
+        0.7983
+      ],
+      [
+        5,
+        0.8008
+      ],
+      [
+        6,
+        0.8013
+      ],
+      [
+        7,
+        0.8009
+      ],
+      [
+        8,
+        0.7991
+      ]
+    ]
+  }
+}

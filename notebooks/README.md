@@ -12,7 +12,7 @@ Read and run these in order. Each notebook has a matching document in `docs/step
 | `06_pretrained_reference.ipynb` | RoBERTa — **reference only, not submitted** | 0.8809 |
 | `07_ensembles.ipynb` | voting, stacking, MBR | **compliant stacking 0.8420 (submitted)** |
 | `08_model_comparison.ipynb` | full leaderboard, transfer, research questions | `results/ensemble/leaderboard_all_models.csv` |
-| `09_ablations.ipynb` | author overlap, stacking members and design, text representation | no drop on unseen authors |
+| `09_ablations.ipynb` | A1, A2, A4–A9: feature blocks, text representation, stacking, EBM and network design, punctuation artefact, author overlap | no drop on unseen authors; gap to RoBERTa is pretraining |
 
 All AUCs are on `sarc_random` test.
 

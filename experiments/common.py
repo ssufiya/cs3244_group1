@@ -37,6 +37,8 @@ OFFICIAL = HERE.parent if (HERE.parent / "pipeline").exists() else HERE.parent.p
 # Predictions are ~500 MB and not in git; CS3244_PRED_DIR can point elsewhere.
 PRED_DIR = Path(os.environ.get("CS3244_PRED_DIR", HERE / "predictions"))
 PRED_DIR.mkdir(exist_ok=True)
+# Feature caches and checkpoints (~6 GB, not in git); CS3244_CACHE_DIR can point elsewhere.
+CACHE_DIR = Path(os.environ.get("CS3244_CACHE_DIR", HERE / ".cache"))
 
 sys.path.insert(0, str(OFFICIAL / "pipeline"))
 from load import load_split, MODEL_SAFE_FEATURES, load_lexicon  # noqa: E402,F401

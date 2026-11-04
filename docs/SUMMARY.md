@@ -15,7 +15,7 @@ Environment for all experiments: Python 3.12 conda environment, PyTorch 2.11 + C
 5. **Pretrained reference: RoBERTa (reply + parent) trained to convergence, 0.8809**, with a second seed at 0.8808. It is ~0.039 above the best compliant result and 0.057 above the from-scratch network that can also compare reply and parent — roughly the value of large-scale pretraining. Stacking with RoBERTa reaches 0.8861, reported as reference only.
 6. **The stacking combiner is saturated.** L2 / L1 / Shapley pruning / gated LightGBM meta-learners differ by less than 0.001; gains come from adding members that make different mistakes, not from a more complex combiner.
 7. **Research questions.** Context helps, but only with models that compare reply and parent token by token (RoBERTa +0.012, from-scratch ESIM +0.006, hand-made features +0.003). Linguistic cues help robustly. Subreddit is not needed.
-8. **Ablations so far (section 11, step 9):** no model loses AUC on authors unseen in training; the stack depends on its members (from-scratch networks −0.0070, improved GBDTs −0.0028 when removed) but not on its design (every design switch ≤ 0.0005); word and character n-grams are complementary. Still open: feature leave-one-out, EBM design, trailing-punctuation artefact, ESIM/Transformer design.
+8. **Ablations (section 11, step 9):** no model loses AUC on authors unseen in training; about 0.01 AUC depends on how replies end (0.807 without endings); the best LightGBM depends mainly on the LR text score (−0.015 without it); the stack depends on its members, not its design; cross-attention adds only +0.001 over encoding the parent separately; a same-size Transformer from scratch is 0.019 below the ESIM, so the gap to RoBERTa is pretraining.
 
 ---
 
@@ -315,7 +315,7 @@ Validation AUC of `scratch_pair` by epoch: 0.796, 0.809, 0.815, 0.818, 0.818, 0.
 | RoBERTa single | 0.8809 | +0.039 | large-scale pretraining (+0.057 vs the comparable from-scratch network 0.8242) |
 | Stacking with RoBERTa | 0.8861 | +0.005 | |
 
-ESIM is a BiLSTM and RoBERTa a Transformer, so the +0.057 also contains some architecture difference; separating them cleanly needs a same-size Transformer trained from scratch (ablation A7).
+ESIM is a BiLSTM and RoBERTa a Transformer. Ablation A7 trained a same-size Transformer from scratch: it reaches only 0.8052, 0.019 below the ESIM, so the +0.057 is pretraining rather than architecture.
 
 5. **Transfer**: on Twitter-style data `scratch_pair` is among the best compliant models (TweetEval 0.648 vs 0.54–0.62 for other compliant models), see section 9.
 
@@ -355,8 +355,8 @@ News headlines (The Onion-style sarcasm) sit around 0.5 for every method: headli
 ## 10. Limitations
 
 1. Compliant models (including the from-scratch networks) use one seed; RoBERTa has two seeds on sarc_random with nearly identical results.
-2. Author overlap: 84% of test authors appear in training, so every score may partly reflect author style; an author-disjoint evaluation has not been run yet.
-3. Possible artefacts such as "does not end with a full stop" are not yet tested.
+2. Author overlap: 84% of test authors appear in training, but A9 shows that no model loses AUC on the unseen-author rows.
+3. About 0.01 AUC depends on how replies end (A8); SARC alone cannot tell whether this is a `/s`-removal artefact or genuine style.
 4. RoBERTa only had its training length tuned (no learning-rate / batch search); larger models were not tried because the GPU is shared. It is a reference only and does not affect submitted results.
 5. The SVM's news-headline score in our re-scoring (0.4231) differs from the original notebook output (0.4453) although in-domain results match exactly; the cause was not found.
 6. Whether VADER counts as a pretrained model needs confirmation with the course (see 1.1).
@@ -373,6 +373,12 @@ News headlines (The Onion-style sarcasm) sit around 0.5 for every method: headli
 | A4 stacking members | removing the from-scratch networks −0.0070, improved GBDTs −0.0028, any other family < 0.001; identical on sarc_subreddit |
 | A5 stacking design | calibration, logits vs probabilities, LR vs LightGBM meta-learner, meta-features, cross-fitting: all within 0.0005 |
 | A2 text representation | word + char + surface 0.8184; word + char 0.8166; word + surface 0.8008; char + surface 0.7981 |
+| A1 feature blocks | removing the LR text score −0.0153, word TF-IDF −0.0056, contrast −0.0020, cues −0.0011, surface −0.0011; 61 dense features alone 0.8240 |
+| A6 EBM design | no interactions 0.8215 (−0.0014); 200k sample 0.8225 (−0.0004) |
+| A7 network design | ESIM without cross-attention 0.8232 (−0.0010); same-size Transformer from scratch 0.8052 (−0.0190 vs ESIM) |
+| A8 trailing punctuation | stripping endings at test −0.0122; retraining on stripped text 0.8069 (−0.0097) |
+
+Not run: A3 (converged reply-only RoBERTa), a reference-only model.
 
 ### Original plan
 

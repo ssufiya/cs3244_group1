@@ -27,10 +27,10 @@ import scipy.sparse as sp
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import roc_auc_score
 
-from common import (HERE, OFFICIAL, SEED, SURFACE, load_frame, row_ids, save_predictions,
+from common import (CACHE_DIR, OFFICIAL, SEED, SURFACE, load_frame, row_ids, save_predictions,
                     scores, select_threshold, text_of, write_json)
 
-CACHE = HERE / ".cache"
+CACHE = CACHE_DIR
 CACHE.mkdir(exist_ok=True)
 SEL = json.loads((OFFICIAL / "results" / "gbdt" / "selected.json").read_text())["lgbm"]
 PARAMS = {"objective": "binary", "metric": "auc", "learning_rate": 0.1, "max_bin": 64, "seed": SEED,

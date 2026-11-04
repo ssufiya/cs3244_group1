@@ -1,8 +1,8 @@
 # Step 9 — Ablations
 
-Notebook: [`notebooks/09_ablations.ipynb`](../../notebooks/09_ablations.ipynb) · Code: `experiments/13_ablations/` · Plan: `docs/SUMMARY.md` section 11
+Notebook: [`notebooks/09_ablations.ipynb`](../../notebooks/09_ablations.ipynb) · Code: `experiments/13_ablations/`, A7 variants in `experiments/12_scratch_nn/nn_scratch.py` · Plan: `docs/SUMMARY.md` section 11
 
-This step checks which components the results depend on and whether they can be trusted. The first four ablations (A9, A4, A5, A2) are done; A1, A6, A8 and A7 need more retraining and are still open.
+This step checks which components the results depend on and whether they can be trusted. Every planned ablation is done except A3 (a converged reply-only RoBERTa, which is a reference model only).
 
 ## A9 — Author overlap (credibility check)
 
@@ -64,11 +64,70 @@ Same vectorisers and C as `experiments/04_char_ngrams_nbsvm`, retrained on `sarc
 
 Word and character n-grams are complementary: each alone is about 0.80, together +0.016 to +0.020 more. Character n-grams alone are slightly weaker than words alone, so they add form cues (elongation, punctuation, casing) rather than replacing words. Surface counts add +0.0018 on top.
 
-## Still open
+## A1 — Feature blocks of the best compliant single model
 
-| ID | Ablation | Cost |
-|---|---|---|
-| A1 | leave one feature block out of the best compliant LightGBM | 4 LightGBM fits, ~1 h CPU |
-| A6 | EBM without interactions, and on a 200k sample | 2–3 EBM fits, ~5 min each |
-| A8 | strip trailing punctuation and re-evaluate (artefact check) | features + refits, ~1 h CPU |
-| A7 | ESIM without cross-attention; same-size from-scratch Transformer | GPU, 20–40 min each |
+`lgbm_lrscore_cues_contrast` retrained with one block removed (same frozen hyper-parameters; sarc_subreddit reuses the tree count chosen on sarc_random).
+
+| Removed block | Features left | sarc_random test AUC | Δ [95% CI] | sarc_subreddit Δ | Recall at P ≥ .75 |
+|---|---:|---:|---|---:|---:|
+| none (full model) | 20,061 | 0.8296 | — | — | 0.751 |
+| **LR text score** | 20,060 | 0.8143 | **−0.0153 [−0.0163, −0.0143]** | −0.0143 | 0.718 |
+| word TF-IDF (20k) | 61 | 0.8240 | −0.0056 [−0.0062, −0.0050] | −0.0067 | 0.739 |
+| reply/parent contrast | 20,043 | 0.8276 | −0.0020 [−0.0024, −0.0015] | −0.0021 | 0.746 |
+| linguistic cues | 20,036 | 0.8286 | −0.0011 [−0.0015, −0.0007] | −0.0016 | 0.750 |
+| surface counts | 20,044 | 0.8286 | −0.0011 [−0.0015, −0.0006] | −0.0019 | 0.749 |
+
+The model depends on the out-of-fold LR score. Without the 20k TF-IDF columns, 61 dense features (LR score + surface + cues + contrast) still reach 0.8240. Every block costs slightly more on unseen communities than on sarc_random, so none of them is a topic shortcut.
+
+## A6 — EBM design
+
+| Variant | Training rows | Terms | Test AUC | Fit time |
+|---|---:|---:|---:|---:|
+| Full EBM (step 4) | 639,638 | 81 | 0.8229 | ~4.5 min |
+| No interactions | 639,638 | 66 | 0.8215 | 2.6 min |
+| 200k-row sample | 200,000 | 81 | 0.8225 | 0.5 min |
+| No text score (step 4) | 639,638 | 80 | 0.7123 | |
+
+The 15 interactions add +0.0014. With the LR text score as a feature, a 200k sample loses only 0.0004, so the team EBM's gap (0.7620) came from its features, not its sample size. A main-effects-only EBM (0.8215) is the simplest fully readable option at almost no cost.
+
+## A7 — From-scratch network design
+
+| Model | Parameters | Best epoch | sarc_random test AUC | TweetEval |
+|---|---:|---:|---:|---:|
+| BiLSTM, reply only | 6.75M | 6 | 0.8180 | 0.623 |
+| BiLSTM, reply and parent encoded separately (no cross-attention) | 6.90M | 8 | 0.8232 | 0.650 |
+| **ESIM (cross-attention)** | 7.79M | 7 | **0.8242** | 0.648 |
+| Transformer from scratch, [CLS] reply [SEP] parent (4 layers, d=192) | 7.65M | 6 | 0.8052 | 0.591 |
+| RoBERTa converged (pretrained reference) | 125M | | 0.8809 | 0.697 |
+
+- Seeing the parent at all gives +0.0052 [+0.0042, +0.0062]; cross-attention adds only +0.0010 [−0.0001, +0.0020] on top. Most of the compliant context gain comes from encoding the parent, not from word-by-word alignment.
+- The same-size Transformer trained from scratch is 0.019 [0.018, 0.020] **below** the ESIM and starts to overfit after epoch 6; RoBERTa is 0.076 above it. RoBERTa's lead over the compliant networks therefore comes from pretraining, not from the Transformer architecture, and the 0.057 gap to the ESIM if anything underestimates what pretraining is worth.
+- Caveat: the Transformer was run with one configuration (lr 3e-4, 2,000 warm-up steps, batch 256) and was not tuned.
+
+## A8 — Trailing punctuation (artefact check)
+
+How training replies end:
+
+| Last character | Not sarcastic | Sarcastic |
+|---|---:|---:|
+| full stop | 52.7% | 40.7% |
+| exclamation mark | 4.6% | 13.5% |
+| question mark | 12.4% | 11.1% |
+| letter or digit | 26.2% | 32.6% |
+
+Word + char LR without surface counts (reference 0.8166), with trailing punctuation and whitespace stripped from every reply (67% of test replies change):
+
+| Train / test text | Test AUC | Δ vs reference [95% CI] |
+|---|---:|---|
+| original / original | 0.8166 | — |
+| original / stripped | 0.8045 | −0.0122 [−0.0130, −0.0114] |
+| stripped / stripped | 0.8069 | −0.0097 [−0.0106, −0.0090] |
+
+About 0.01 AUC depends on how a reply ends, and retraining without endings recovers only a quarter of it. The model still reaches 0.807 with no ending information, so endings are a small part of the signal. SARC alone cannot tell whether the difference is an artefact of removing `/s` or a genuine style difference (sarcastic replies are more casual and more often end with `!` or no punctuation). The report should state the ~0.01 dependency and the 0.807 floor.
+
+## Overall reading
+
+- **Credibility:** no author memorisation (A9); about 0.01 AUC rests on reply endings (A8); every component behaves the same on unseen communities.
+- **What the compliant results depend on:** the word+char LR score inside the LightGBM (A1), the word/char complementarity (A2), and the from-scratch networks in the stack (A4). The stack design (A5), EBM interactions and sample size (A6) and cross-attention (A7) matter little.
+- **Architecture vs pretraining:** a from-scratch Transformer is weaker than the BiLSTM-based ESIM (A7), so the gap to RoBERTa is pretraining.
+- **Not run:** A3 (a converged reply-only RoBERTa), which would only refine a reference number.

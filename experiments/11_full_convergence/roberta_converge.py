@@ -29,7 +29,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "07_transformer_finetune"))
-from common import (SEED, load_frame, parent_of, row_ids, text_of, save_predictions, scores,  # noqa: E402
+from common import (CACHE_DIR, SEED, load_frame, parent_of, row_ids, text_of, save_predictions, scores,  # noqa: E402
                     select_threshold, write_json)
 from run import MODEL, TRANSFER, predict  # noqa: E402
 
@@ -68,14 +68,14 @@ def main():
     eval_steps = max(1, int(per_epoch * a.eval_every))
     opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=0.01)
     sch = get_linear_schedule_with_warmup(opt, int(0.06 * steps), steps)
-    ckpt = ROOT / ".cache" / f"11_{tag}__{a.scheme}.pt"
+    ckpt = CACHE_DIR / f"11_{tag}__{a.scheme}.pt"
     log = {"model": MODEL, "variant": "pair", "scheme": a.scheme, "lr": a.lr, "bs": a.bs,
            "seed": a.seed, "schedule_epochs": epochs, "evals": []}
     best, bad, t0, step, run_loss, stop = -1.0, 0, time.time(), 0, 0.0, False
     # resumable state (the laptop session can be torn down mid-run): saved every
     # --save-every steps; the epoch's shuffle is rebuilt from the rng state saved
     # at the epoch start and the batches already done are skipped
-    state_path = ROOT / ".cache" / f"11_{tag}__{a.scheme}{'_smoke' if a.limit else ''}__state.pt"
+    state_path = CACHE_DIR / f"11_{tag}__{a.scheme}{'_smoke' if a.limit else ''}__state.pt"
     skip, epoch_rng = 0, None
     if state_path.exists():
         st = torch.load(state_path, map_location=dev, weights_only=False)

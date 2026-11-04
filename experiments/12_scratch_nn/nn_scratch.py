@@ -14,6 +14,10 @@ Variants
           a second BiLSTM composes them; max+mean pooling of both sides; MLP.
           An empty parent is a single <pad>-masked position, so the model falls
           back to the reply.
+  pair_noattn       ablation A7: reply and parent encoded by the same BiLSTM and
+                    pooled independently, no cross-attention.
+  transformer_pair  ablation A7: a from-scratch Transformer encoder (4 layers,
+                    d=192) over [CLS] reply [SEP] parent, sized like the ESIM.
 
 Training: Adam lr 1e-3, batch 512, dropout 0.3, grad clip 5, up to --max-epochs;
 validation AUC every epoch, best checkpoint kept, stop after --patience epochs
@@ -40,10 +44,10 @@ from sklearn.metrics import roc_auc_score
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 sys.path.insert(0, str(ROOT))
-from common import (load_frame, parent_of, row_ids, save_predictions, scores,  # noqa: E402
+from common import (CACHE_DIR, load_frame, parent_of, row_ids, save_predictions, scores,  # noqa: E402
                     select_threshold, text_of, write_json)
 
-CACHE = ROOT / ".cache" / "12_scratch"
+CACHE = CACHE_DIR / "12_scratch"
 CACHE.mkdir(parents=True, exist_ok=True)
 TRANSFER = ["news_headlines", "figlang_reddit", "figlang_twitter", "tweeteval_irony"]
 R_LEN, P_LEN, VOCAB = 64, 96, 30_000
@@ -104,6 +108,8 @@ class Net(nn.Module):
             self.proj = nn.Sequential(nn.Linear(4 * d, hid), nn.ReLU())
             self.comp = nn.LSTM(hid, hid, batch_first=True, bidirectional=True)
             head_in = 4 * d                                   # pooled reply + parent
+        elif variant == "pair_noattn":
+            head_in = 4 * d                                   # reply and parent encoded independently
         else:
             head_in = 2 * d
         self.head = nn.Sequential(nn.Dropout(drop), nn.Linear(head_in, hid), nn.Tanh(),
@@ -117,9 +123,11 @@ class Net(nn.Module):
 
     def forward(self, r, p=None):
         a, ma = self.encode(r)
-        if self.variant != "pair":
+        if self.variant == "reply":
             return self.head(masked_pool(a, ma)).squeeze(-1)
         b, mb = self.encode(p)
+        if self.variant == "pair_noattn":
+            return self.head(torch.cat([masked_pool(a, ma), masked_pool(b, mb)], -1)).squeeze(-1)
         e = torch.bmm(a, b.transpose(1, 2))                   # reply x parent alignment scores
         a_t = torch.bmm(F.softmax(e.masked_fill(~mb.unsqueeze(1), -1e4), -1), b)   # parent summary per reply token
         b_t = torch.bmm(F.softmax(e.masked_fill(~ma.unsqueeze(2), -1e4), 1).transpose(1, 2), a)
@@ -127,6 +135,33 @@ class Net(nn.Module):
         va, _ = self.comp(self.drop(self.proj(ma_)))
         vb, _ = self.comp(self.drop(self.proj(mb_)))
         return self.head(torch.cat([masked_pool(va, ma), masked_pool(vb, mb)], -1)).squeeze(-1)
+
+
+class PairTransformer(nn.Module):
+    """From-scratch Transformer encoder over [CLS] reply [SEP] parent, sized like the ESIM."""
+
+    def __init__(self, vocab=VOCAB, d=192, layers=4, heads=4, ff=768, drop=0.1):
+        super().__init__()
+        self.cls, self.sep = vocab, vocab + 1
+        self.emb = nn.Embedding(vocab + 2, d, padding_idx=0)
+        self.pos = nn.Embedding(R_LEN + P_LEN + 2, d)
+        self.seg = nn.Embedding(2, d)
+        layer = nn.TransformerEncoderLayer(d, heads, ff, drop, activation="gelu", batch_first=True, norm_first=True)
+        self.enc = nn.TransformerEncoder(layer, layers, enable_nested_tensor=False)
+        self.norm = nn.LayerNorm(d)
+        self.head = nn.Sequential(nn.Dropout(0.3), nn.Linear(2 * d, d), nn.Tanh(), nn.Dropout(0.3), nn.Linear(d, 1))
+
+    def forward(self, r, p):
+        n = r.shape[0]
+        cls = torch.full((n, 1), self.cls, dtype=r.dtype, device=r.device)
+        sep = torch.full((n, 1), self.sep, dtype=r.dtype, device=r.device)
+        x = torch.cat([cls, r, sep, p], 1)
+        seg = torch.cat([torch.zeros(n, R_LEN + 2, dtype=r.dtype, device=r.device),
+                         torch.ones(n, P_LEN, dtype=r.dtype, device=r.device)], 1)
+        pos = torch.arange(x.shape[1], device=x.device).unsqueeze(0)
+        m = x != 0
+        h = self.enc(self.emb(x) + self.pos(pos) + self.seg(seg), src_key_padding_mask=~m)
+        return self.head(masked_pool(self.norm(h), m)).squeeze(-1)
 
 
 @torch.no_grad()
@@ -144,13 +179,14 @@ def predict(model, r, p, dev, bs=256):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--variant", choices=["reply", "pair"], required=True)
+    ap.add_argument("--variant", choices=["reply", "pair", "pair_noattn", "transformer_pair"], required=True)
     ap.add_argument("--scheme", default="sarc_random")
     ap.add_argument("--max-epochs", type=int, default=12)
     ap.add_argument("--fixed-epochs", type=int, default=0)
     ap.add_argument("--patience", type=int, default=2)
     ap.add_argument("--bs", type=int, default=512)
     ap.add_argument("--lr", type=float, default=1e-3)
+    ap.add_argument("--warmup", type=int, default=0, help="linear learning-rate warm-up steps")
     ap.add_argument("--mem-frac", type=float, default=0.27,
                     help="cap on this process's share of GPU memory (the GPU is shared)")
     a = ap.parse_args()
@@ -162,7 +198,7 @@ def main():
     tok = tokenizer(a.scheme)
     rtr, ptr, ytr = arrays(a.scheme, a.scheme, "train", tok)
     rva, pva, yva = arrays(a.scheme, a.scheme, "val", tok)
-    model = Net(a.variant).to(dev)
+    model = (PairTransformer() if a.variant == "transformer_pair" else Net(a.variant)).to(dev)
     opt = torch.optim.Adam(model.parameters(), lr=a.lr)
     sched = torch.optim.lr_scheduler.ReduceLROnPlateau(opt, mode="max", factor=0.5, patience=0)
     n_params = sum(p.numel() for p in model.parameters())
@@ -178,6 +214,7 @@ def main():
         print(f"[{tag}/{a.scheme}] resumed after epoch {ep0}", flush=True)
     epochs = a.fixed_epochs or a.max_epochs
     model.train()
+    step = ep0 * ((len(ytr) + a.bs - 1) // a.bs)
     for ep in range(ep0 + 1, epochs + 1):
         perm, tot = rng.permutation(len(ytr)), 0.0
         for s in range(0, len(perm), a.bs):
@@ -190,6 +227,10 @@ def main():
             opt.zero_grad(set_to_none=True)
             loss.backward()
             nn.utils.clip_grad_norm_(model.parameters(), 5.0)
+            step += 1
+            if a.warmup and step <= a.warmup and ep == 1:
+                for g in opt.param_groups:
+                    g["lr"] = a.lr * step / a.warmup
             opt.step()
             tot += loss.item() * len(b)
         auc = roc_auc_score(yva, predict(model, rva, pva, dev))
