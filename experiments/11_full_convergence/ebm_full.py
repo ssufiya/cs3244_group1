@@ -55,13 +55,15 @@ def main():
     ap.add_argument("--scheme", default="sarc_random")
     ap.add_argument("--no-text", action="store_true")
     ap.add_argument("--jobs", type=int, default=16)
+    ap.add_argument("--seed", type=int, default=SEED)
     a = ap.parse_args()
-    tag = "ebm_full" + ("_notext" if a.no_text else "")
+    tag = "ebm_full" + ("_notext" if a.no_text else "") + (f"_s{a.seed}" if a.seed != SEED else "")
+    group = f"14_seed_{tag}" if a.seed != SEED else f"11_{tag}"
     t0 = time.time()
     Xtr, ytr, _ = features(a.scheme, a.scheme, "train", not a.no_text)
     print(f"[{tag}/{a.scheme}] train {Xtr.shape} ({time.time()-t0:.0f}s)", flush=True)
     ebm = ExplainableBoostingClassifier(
-        random_state=SEED, n_jobs=a.jobs, outer_bags=8, inner_bags=0, interactions=15,
+        random_state=a.seed, n_jobs=a.jobs, outer_bags=8, inner_bags=0, interactions=15,
         max_bins=256, learning_rate=0.02, early_stopping_rounds=100, max_rounds=20000,
         min_samples_leaf=50, validation_size=0.15)
     ebm.fit(Xtr, ytr)
@@ -76,7 +78,7 @@ def main():
     for ds, part in keys:
         X, y, df = features(a.scheme, ds, part, not a.no_text)
         p = ebm.predict_proba(X)[:, 1]
-        save_predictions(f"11_{tag}", ds, part, y, {f"{a.scheme}__{tag}": p}, ids=row_ids(df))
+        save_predictions(group, ds, part, y, {f"{a.scheme}__{tag}": p}, ids=row_ids(df))
         if part == "val":
             out["val_auc"] = roc_auc_score(y, p)
             thr = select_threshold(y, p)

@@ -354,9 +354,9 @@ News headlines (The Onion-style sarcasm) sit around 0.5 for every method: headli
 
 ## 10. Limitations
 
-1. Compliant models (including the from-scratch networks) use one seed; RoBERTa has two seeds on sarc_random with nearly identical results.
+1. Seeds: three seeds for the seeded compliant models move test AUC by at most 0.0007, and the stack is 0.8417 ± 0.0003 (step 10). RoBERTa has two seeds with nearly identical results.
 2. Author overlap: 84% of test authors appear in training, but A9 shows that no model loses AUC on the unseen-author rows.
-3. About 0.01 AUC depends on how replies end (A8); SARC alone cannot tell whether this is a `/s`-removal artefact or genuine style.
+3. About 0.01 AUC depends on how replies end (A8). The pattern appears on both Reddit datasets but not on human-annotated TweetEval and reverses on FigLang Twitter (step 10), so it is likely a Reddit labelling or platform artefact.
 4. RoBERTa only had its training length tuned (no learning-rate / batch search); larger models were not tried because the GPU is shared. It is a reference only and does not affect submitted results.
 5. The SVM's news-headline score in our re-scoring (0.4231) differs from the original notebook output (0.4453) although in-domain results match exactly; the cause was not found.
 6. Whether VADER counts as a pretrained model needs confirmation with the course (see 1.1).
@@ -400,12 +400,23 @@ Suggested order: (1) A4, A5, A9, A2 — cheap, same day, A9 matters most for cre
 
 ---
 
+## 11b. Final checks (step 10)
+
+| Check | Result |
+|---|---|
+| Reproduction | `ensemble_v3.py` rerun from scratch: 0.8420 / 0.8340, within 3e-5 of the saved run |
+| Seeds (3 per model) | best LightGBM 0.8299 ± 0.0003; EBM 0.8229 ± 0.0000; ESIM 0.8237 ± 0.0004; BiLSTM 0.8180 ± 0.0007; stack 0.8417 ± 0.0003 |
+| `sarc_temporal` | baseline 0.7918; best LightGBM 0.8126 (+0.021); EBM 0.8054; ESIM 0.8050; 13-member stack 0.8240 (+0.032) |
+| Transformer tuning | best of four configurations 0.8067, still 0.018 below the ESIM |
+| Endings on other datasets | Reddit sets show the pattern, TweetEval does not, FigLang Twitter reverses it |
+| Team ensemble notebook | same four members with AUC on scores: soft vote 0.8137, LR stack 0.8142 (+0.0068); the notebook's 0.71–0.74 is AUC on 0/1 labels |
+
 ## 12. Where things are
 
 | Path | Contents |
 |---|---|
-| `notebooks/01–09_*.ipynb` | step-by-step notebooks that recompute every number here from saved predictions |
-| `docs/steps/01–09_*.md` | one document per step |
+| `notebooks/01–10_*.ipynb` | step-by-step notebooks that recompute every number here from saved predictions |
+| `docs/steps/01–10_*.md` | one document per step |
 | `pipeline/` | data download, cleaning, EDA, splits (step 1) |
 | `modelling/` | team baselines (step 2) |
 | `experiments/` | training code for steps 3–7 (`common.py`, `features_extra.py`, `lgbm_runner.py`, numbered folders 00–12) and their small result files |

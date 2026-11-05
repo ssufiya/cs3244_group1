@@ -20,6 +20,7 @@ page, then follow the step-by-step notebooks.
 | 7 Ensembles | `notebooks/07_ensembles.ipynb` | `docs/steps/07_ensembles.md` |
 | 8 Model comparison | `notebooks/08_model_comparison.ipynb` | `docs/steps/08_model_comparison.md` |
 | 9 Ablations | `notebooks/09_ablations.ipynb` | `docs/steps/09_ablations.md` |
+| 10 Final checks: seeds, time split, reproduction | `notebooks/10_final_checks.ipynb` | `docs/steps/10_final_checks.md` |
 
 Headline (sarc_random test AUC): LightGBM baseline 0.8074, best compliant single
 model 0.8296, interpretable EBM 0.8229, **compliant stacking 0.8420**. The
@@ -38,8 +39,10 @@ steps 3–7 is in `experiments/` (see `experiments/README.md`).
 | Exploratory analysis — 10 figures, written report | done |
 | Train/val/test splits — 3 primary schemes, 4 supplementary | done |
 | Leakage audit — 33 checks, all passing | done |
-| Base Model Algorithm 2 (LightGBM) + tuning | done |
-| Base Models 1 and 3, Week 8 ablations | next |
+| Team baselines: NB, LR, SVM, SGD, LightGBM, XGBoost, trees, EBM | done |
+| Feature engineering, full-data EBM, from-scratch networks | done |
+| Ensembles (voting, stacking, MBR) | done |
+| Ablations A1, A2, A4–A9; seeds and `sarc_temporal` checks | done |
 
 ---
 
@@ -66,45 +69,32 @@ python pipeline/00_download_datasets.py    # ~278 MB, no Kaggle token needed
 - `05_verify_splits.ipynb` - verify if split data is usable for modelling 
 
 
-Then, to train:
+Then follow the step-by-step notebooks in `notebooks/` (table above). They
+recompute every number from saved predictions; the training code for steps
+3–9 is in `experiments/` (see `experiments/README.md`). The team baseline
+notebooks are in `modelling/`.
 
-```python
-import sys; sys.path.insert(0, "pipeline")
-from load import load_split, xy
-
-train, val, test = load_split("sarc_random")
-X, y = xy(train)          # text + 22 numeric features, unsafe columns excluded
-```
-
-The Algorithm 2 experiment:
-
-```bash
-python modelling/10_build_features.py
-python modelling/11_tune.py
-python modelling/12_evaluate.py
-python modelling/13_explain.py
-python modelling/14_tuning_analysis.py
-python modelling/15_stress_splits.py
-```
+Experiment dependencies (LightGBM, XGBoost, interpret, PyTorch, tokenizers)
+are listed in `requirements-experiments.txt`.
 
 ---
 
 ## Layout
 
 ```
-pipeline/            data acquisition, cleaning, EDA, splitting
+pipeline/            data acquisition, cleaning, EDA, splitting (step 1)
   common/              text_cleaning, paths, report, viz
   00–05_*.py           the pipeline, in order
   scrapers/            provided but not run (need API credentials)
   load.py              dataset loader + the model-safe feature allow-list
-  notebooks            cleaning pipeline (python notebooks), in order 
+  notebooks/           the same pipeline as notebooks
 
-modelling/           Base Model Algorithm 2 (LightGBM)
-  config.py            every hyper-parameter and protocol constant
-  10–15_*.py           features → tune → evaluate → explain → stress splits
-
-docs/                datasets, data dictionary, split card, reports
-figures/             eda/F01–F10, algo2/L01–L07
+modelling/           team baselines (step 2): probabilistic_linear, Margin-Based,
+                     gradient_boosting, tree-based, glassbox, Ensemble
+experiments/         training code for steps 3–9 and their small result files
+notebooks/           step-by-step notebooks 01–10
+docs/                SUMMARY.md, steps/01–10, datasets, data dictionary, split card, reports
+figures/             eda/, gbdt/, glassbox/, nb_logreg/, margin-based/, tree-based/, steps/
 results/             machine-readable output from every stage
 data/                manifest, catalogue, CSV previews (bulk is git-ignored)
 ```
@@ -154,14 +144,19 @@ From the [EDA](docs/eda_report.md):
 - Subreddit is a very strong predictor — 8% in r/RoastMe to 79% in r/creepyPMs —
   but what it predicts is the `/s` convention, not sarcasm.
 
-From the [Algorithm 2 experiment](docs/experiment_report.md):
+From the step-by-step study ([`docs/SUMMARY.md`](docs/SUMMARY.md)):
 
-- LightGBM ties TF-IDF + logistic regression (0.7059 vs 0.7060 accuracy). The
-  bottleneck is the representation: SVD retains 15% of the text variance.
-- Grouped permutation importance prices each information source. Context is worth
-  +0.0099 AUC, surface markers +0.0685, subreddit +0.0207.
-- Cross-platform transfer fails rather than degrades. On news headlines the AUC
-  is 0.4865 — below chance.
+- The bottleneck is the representation, not the classifier: LightGBM and LR
+  baselines are within 0.005 AUC. Character n-grams and feeding an LR score to
+  the trees lift the best compliant single model to 0.8296.
+- Context helps only with models that compare reply and parent: +0.003 for
+  hand-made contrast features, +0.006 for a from-scratch ESIM, +0.012 for RoBERTa
+  (reference only).
+- Stacking 24 compliant models reaches 0.8420; the gain comes from members that
+  err differently, not from the combiner.
+- Results hold on unseen communities and unseen authors. About 0.01 AUC depends
+  on how Reddit replies end.
+- Cross-platform transfer stays weak: news headlines are near 0.5 for every model.
 
 ---
 
@@ -171,8 +166,8 @@ From the [Algorithm 2 experiment](docs/experiment_report.md):
    Both stress splits ship ready to use.
 2. Never mix the three primary split schemes. They partition the same 913,769
    rows, so 70.1% of `sarc_temporal/test` and `sarc_subreddit/test` sits inside
-   `sarc_random/train`. `modelling/15_stress_splits.py` shows the correct
-   pattern.
+   `sarc_random/train`. the step notebooks show the correct
+   pattern (each split set is trained and tested on its own).
 3. Drop `ups`, `downs` and their missingness flags (collection artefacts),
    `score` (only known after the fact), `hour_utc` (no signal), `n_emoji` (always
    zero on 2009–2016 Reddit), and every `had_*` audit column (direct label leak).
@@ -192,8 +187,13 @@ From the [Algorithm 2 experiment](docs/experiment_report.md):
 Python 3.12. `pip install -r requirements.txt`.
 
 `langdetect` is optional — without it the language filter falls back to the
-lexical heuristic alone. `scikit-learn` is needed from step 04 onward, and
-`lightgbm` only for `modelling/`.
+lexical heuristic alone. `scikit-learn` is needed from step 04 onward. The
+modelling and experiment steps also need `pip install -r requirements-experiments.txt`.
+
+The notebooks read saved model predictions (~500 MB) that are not in git. Put
+them at `experiments/predictions/` or point `CS3244_PRED_DIR` at them;
+retraining additionally uses feature caches from `CS3244_CACHE_DIR` (default
+`experiments/.cache/`).
 
 ---
 

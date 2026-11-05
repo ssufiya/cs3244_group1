@@ -1,0 +1,101 @@
+{
+  "model": "ebm_full",
+  "scheme": "sarc_temporal",
+  "train_rows": 484447,
+  "n_features": 66,
+  "n_terms": 81,
+  "fit_seconds": 136,
+  "best_rounds_per_bag": [
+    25880,
+    33939,
+    67920,
+    48233,
+    30247,
+    28791,
+    45217,
+    45967,
+    4715,
+    4117,
+    5139,
+    3929,
+    3976,
+    4201,
+    4089,
+    3560
+  ],
+  "val_auc": 0.809571463302864,
+  "p75_threshold": 0.5123126333764472,
+  "sarc_temporal": {
+    "roc_auc": 0.8053841943463551,
+    "pr_auc": 0.7903202553705871,
+    "accuracy": 0.730386507552945,
+    "precision": 0.70356606874866,
+    "recall": 0.7105289272600972,
+    "f1": 0.7070303558043188,
+    "brier": 0.1801842434246833,
+    "p75_precision": 0.7103224859130371,
+    "p75_recall": 0.6982687849017114
+  },
+  "top_terms": [
+    {
+      "term": "text_ngram_logodds",
+      "importance": 1.1735483762696948
+    },
+    {
+      "term": "parent_n_chars",
+      "importance": 0.19850513957307495
+    },
+    {
+      "term": "cue_opener",
+      "importance": 0.11330483056111083
+    },
+    {
+      "term": "n_chars",
+      "importance": 0.0868721471513354
+    },
+    {
+      "term": "parent_n_words",
+      "importance": 0.08083867049499548
+    },
+    {
+      "term": "len_ratio_to_parent",
+      "importance": 0.0671617409602129
+    },
+    {
+      "term": "n_chars & text_ngram_logodds",
+      "importance": 0.05827882603861937
+    },
+    {
+      "term": "par_n_words_log",
+      "importance": 0.05783471436987143
+    },
+    {
+      "term": "starts_with_interjection",
+      "importance": 0.055373844797350705
+    },
+    {
+      "term": "parent_jaccard",
+      "importance": 0.04631573962671768
+    },
+    {
+      "term": "rep_par_len_ratio_log",
+      "importance": 0.04196420623517073
+    },
+    {
+      "term": "n_words",
+      "importance": 0.03993979002437655
+    },
+    {
+      "term": "cue_mock_agree",
+      "importance": 0.03320140031237171
+    },
+    {
+      "term": "avg_word_len & text_ngram_logodds",
+      "importance": 0.030318063303708443
+    },
+    {
+      "term": "avg_word_len",
+      "importance": 0.027521779792131364
+    }
+  ]
+}

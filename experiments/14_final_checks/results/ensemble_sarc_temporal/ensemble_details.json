@@ -1,0 +1,105 @@
+{
+  "members": [
+    "lgbm_reply_tfidf",
+    "lgbm_reply_tfidf_surface",
+    "xgb_reply_tfidf",
+    "xgb_reply_tfidf_surface",
+    "lr_reply_tfidf",
+    "lr_reply_tfidf_surface",
+    "mnb_reply_tfidf",
+    "mnb_reply_tfidf_surface",
+    "ebm_full",
+    "scratch_pair",
+    "scratch_reply",
+    "lgbm_lrscore_cues_contrast",
+    "lr_word_char_surface"
+  ],
+  "single_val_auc": {
+    "lgbm_reply_tfidf": 0.7821296545644182,
+    "lgbm_reply_tfidf_surface": 0.7934602400077384,
+    "xgb_reply_tfidf": 0.7811305235064954,
+    "xgb_reply_tfidf_surface": 0.7923789604341674,
+    "lr_reply_tfidf": 0.7789951845914734,
+    "lr_reply_tfidf_surface": 0.7879762344658565,
+    "mnb_reply_tfidf": 0.7657290275194146,
+    "mnb_reply_tfidf_surface": 0.721535374227658,
+    "ebm_full": 0.8095676363431263,
+    "scratch_pair": 0.8092841254238023,
+    "scratch_reply": 0.8044849850515237,
+    "lgbm_lrscore_cues_contrast": 0.8160461479137233,
+    "lr_word_char_surface": 0.8045006611886278
+  },
+  "best_single": "lgbm_lrscore_cues_contrast",
+  "greedy_weights": {
+    "scratch_pair": 0.5,
+    "lgbm_lrscore_cues_contrast": 0.5
+  },
+  "stack_lr_coef": {
+    "lgbm_reply_tfidf": 0.06725054649715022,
+    "lgbm_reply_tfidf_surface": 0.042301869823139965,
+    "xgb_reply_tfidf": -0.08671680725200409,
+    "xgb_reply_tfidf_surface": 0.13132065463967552,
+    "lr_reply_tfidf": -0.18859752566445226,
+    "lr_reply_tfidf_surface": -0.057010961123516564,
+    "mnb_reply_tfidf": 0.28464067101989377,
+    "mnb_reply_tfidf_surface": -0.07104016685089601,
+    "ebm_full": 0.051962697521045445,
+    "scratch_pair": 0.38901290857511245,
+    "scratch_reply": 0.13504941311600835,
+    "lgbm_lrscore_cues_contrast": 0.5060955148460129,
+    "lr_word_char_surface": -0.054196914889665555
+  },
+  "stack_l1": {
+    "C": 1.0,
+    "kept": [
+      "lgbm_reply_tfidf",
+      "lgbm_reply_tfidf_surface",
+      "xgb_reply_tfidf",
+      "xgb_reply_tfidf_surface",
+      "lr_reply_tfidf",
+      "lr_reply_tfidf_surface",
+      "mnb_reply_tfidf",
+      "mnb_reply_tfidf_surface",
+      "ebm_full",
+      "scratch_pair",
+      "scratch_reply",
+      "lgbm_lrscore_cues_contrast",
+      "lr_word_char_surface"
+    ]
+  },
+  "shapley": {
+    "values": {
+      "scratch_pair": 0.005742664445277726,
+      "scratch_reply": 0.0033234128495607204,
+      "mnb_reply_tfidf": 0.0009198003556818574,
+      "lgbm_reply_tfidf_surface": 0.0002515621777028909,
+      "xgb_reply_tfidf_surface": 0.0002451887137208675,
+      "lr_reply_tfidf": 0.00020656534234896515,
+      "lr_reply_tfidf_surface": 0.00018857452746838532,
+      "ebm_full": 0.00017673662938778867,
+      "xgb_reply_tfidf": 0.0001245413289826617,
+      "mnb_reply_tfidf_surface": 8.501400891391953e-05,
+      "lgbm_reply_tfidf": 4.914153889703602e-05,
+      "lr_word_char_surface": 4.627160395132927e-05,
+      "lgbm_lrscore_cues_contrast": 0.0
+    },
+    "v_all": 0.8288211688735455,
+    "kept": [
+      "lgbm_lrscore_cues_contrast",
+      "lgbm_reply_tfidf",
+      "lgbm_reply_tfidf_surface",
+      "xgb_reply_tfidf",
+      "xgb_reply_tfidf_surface",
+      "lr_reply_tfidf",
+      "lr_reply_tfidf_surface",
+      "mnb_reply_tfidf",
+      "mnb_reply_tfidf_surface",
+      "ebm_full",
+      "scratch_pair",
+      "scratch_reply",
+      "lr_word_char_surface"
+    ]
+  },
+  "stack_lgbm_meta_rounds": 474,
+  "chosen_by_val": "blend_meta_lr"
+}

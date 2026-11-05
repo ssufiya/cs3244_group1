@@ -25,6 +25,6 @@ Validation AUC by epoch: 0.8553, 0.8670, 0.8737, 0.8771, 0.8773, **0.8784**. Tra
 ## What the reference tells us
 
 - **Context**: reply + parent vs reply-only is +0.0119, the largest context gain of any model.
-- **Pretraining**: about +0.057 over the from-scratch ESIM (0.8242), which can also cross-attend reply and parent. Part of this gap is Transformer vs BiLSTM architecture (ablation A7).
+- **Pretraining**: about +0.057 over the from-scratch ESIM (0.8242), which can also cross-attend reply and parent. A same-size Transformer trained from scratch reaches only 0.8052–0.8067 (A7, step 10), below the ESIM, so this gap is pretraining rather than architecture.
 - **Transfer**: best on Twitter-style data (FigLang Twitter 0.748, TweetEval 0.697). News headlines are about 0.5 for every model.
 - With RoBERTa the stacking framework reaches 0.8861; this is a reference number only.

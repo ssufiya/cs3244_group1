@@ -31,3 +31,4 @@ The pretrained reference (step 6) is about 0.05 AUC above the best compliant mod
 - Context is usable under the course rules: the gain is twice that of the hand-made contrast features and about half of RoBERTa's.
 - On its own it does not beat feature-engineered LightGBM, but because it errs differently it becomes the **most valuable stacking member** (step 7: +0.0070).
 - It is the best compliant model on TweetEval transfer (0.648).
+- Ablations (steps 9 and 10): cross-attention adds only +0.001 over encoding the parent separately; a same-size from-scratch Transformer is 0.018–0.019 lower; three seeds give 0.8237 ± 0.0004; on `sarc_temporal` the ESIM is +0.013 over the baseline.

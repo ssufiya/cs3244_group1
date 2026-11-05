@@ -1,0 +1,25 @@
+{
+  "members": [
+    "lgbm_reply_tfidf_surface",
+    "xgb_reply_tfidf_surface",
+    "lr_reply_tfidf_surface",
+    "svm_tfidf_lex_surface"
+  ],
+  "single_test_auc": {
+    "lgbm_reply_tfidf_surface": 0.8074291507173212,
+    "xgb_reply_tfidf_surface": 0.8060842057279185,
+    "lr_reply_tfidf_surface": 0.8028814140865471,
+    "svm_tfidf_lex_surface": 0.8025727430744161
+  },
+  "soft_vote_test_auc": 0.8136774636546634,
+  "hard_vote_test_auc_on_vote_share": 0.77020785932624,
+  "stack_lr_val_auc_oof": 0.8114252556820976,
+  "stack_lr_test_auc": 0.8141998896592858,
+  "stack_lr_test_auc_on_0_1_labels": 0.7374043944574028,
+  "stack_vs_lgbm_baseline": {
+    "diff": 0.00677073894196456,
+    "ci_low": 0.006219234160640732,
+    "ci_high": 0.007311293468007646,
+    "p_le_0": 0.0
+  }
+}

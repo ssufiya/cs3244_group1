@@ -23,6 +23,7 @@ These scripts produced every model after the team baselines. The step notebooks 
 | `10_combined_best/` | 3 | all features combined incl. MiniLM — **reference only** |
 | `11_full_convergence/` | 4, 6, 7 | full-data EBM (`ebm_full.py`, `explain_ebm.py`), RoBERTa to convergence (`roberta_converge.py`, reference only), final stacking framework (`ensemble_v3.py`) |
 | `12_scratch_nn/` | 5 | from-scratch BiLSTM and ESIM (`nn_scratch.py`) |
+| `14_final_checks/` | 10 | `lgbm_seeds_temporal.py`, `quick_checks.py`, `seeds_and_temporal_stack.py`, `run_queue.py` (seeds for LightGBM, EBM and networks; `sarc_temporal` refits; Transformer tuning) |
 | `13_ablations/` | 9 | `stacking_and_author.py` (A4, A5, A9), `text_representation.py` (A2), `feature_blocks.py` (A1), `ebm_design.py` (A6), `punctuation_artifact.py` (A8), `run_queue.py` (detached CPU/GPU queues); A7 uses the `pair_noattn` and `transformer_pair` variants of `12_scratch_nn/nn_scratch.py` |
 
 Each folder's `results/` holds small metric files (JSON/CSV) that the notebooks read.

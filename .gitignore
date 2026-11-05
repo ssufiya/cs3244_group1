@@ -43,3 +43,5 @@ experiments/.cache/
 experiments/logs/
 
 docs/*_zh.md
+experiments/**/*.npy
+experiments/**/*.done

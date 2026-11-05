@@ -1,0 +1,81 @@
+{
+  "variant": "reply",
+  "scheme": "sarc_temporal",
+  "seed": 3244,
+  "params": 6753025,
+  "evals": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5838528575810737,
+      "val_auc": 0.7783485829500482,
+      "lr": 0.001,
+      "seconds": 24
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.542267703566857,
+      "val_auc": 0.7924226497050302,
+      "lr": 0.001,
+      "seconds": 43
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.5227616720599286,
+      "val_auc": 0.7994926490723073,
+      "lr": 0.001,
+      "seconds": 62
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.5075650295325637,
+      "val_auc": 0.8020062367413491,
+      "lr": 0.001,
+      "seconds": 81
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.4936506730100184,
+      "val_auc": 0.8040159108119528,
+      "lr": 0.001,
+      "seconds": 100
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.4813313012235101,
+      "val_auc": 0.804494721366859,
+      "lr": 0.001,
+      "seconds": 119
+    }
+  ],
+  "args": {
+    "variant": "reply",
+    "scheme": "sarc_temporal",
+    "max_epochs": 12,
+    "fixed_epochs": 6,
+    "patience": 2,
+    "bs": 512,
+    "lr": 0.001,
+    "warmup": 0,
+    "seed": 3244,
+    "tf_layers": 4,
+    "tf_dim": 192,
+    "tf_ff": 768,
+    "tf_drop": 0.1,
+    "tag_suffix": "",
+    "mem_frac": 0.27
+  },
+  "best_epoch": 6,
+  "train_seconds": 119,
+  "val_auc": 0.804494721366859,
+  "sarc_temporal": {
+    "roc_auc": 0.8009665591184122,
+    "pr_auc": 0.7851704322521886,
+    "accuracy": 0.7283872593363653,
+    "precision": 0.7046733723083627,
+    "recall": 0.7002805669075393,
+    "f1": 0.7024701022158071,
+    "brier": 0.18848655093438102,
+    "p75_precision": 0.7126072273828568,
+    "p75_recall": 0.687226537479589
+  }
+}

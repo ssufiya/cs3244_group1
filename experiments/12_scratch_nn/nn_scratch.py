@@ -187,23 +187,32 @@ def main():
     ap.add_argument("--bs", type=int, default=512)
     ap.add_argument("--lr", type=float, default=1e-3)
     ap.add_argument("--warmup", type=int, default=0, help="linear learning-rate warm-up steps")
+    ap.add_argument("--seed", type=int, default=SEED)
+    ap.add_argument("--tf-layers", type=int, default=4)
+    ap.add_argument("--tf-dim", type=int, default=192)
+    ap.add_argument("--tf-ff", type=int, default=768)
+    ap.add_argument("--tf-drop", type=float, default=0.1)
+    ap.add_argument("--tag-suffix", default="", help="names a tuning run, e.g. _cfg2")
     ap.add_argument("--mem-frac", type=float, default=0.27,
                     help="cap on this process's share of GPU memory (the GPU is shared)")
     a = ap.parse_args()
     torch.cuda.set_per_process_memory_fraction(a.mem_frac)
-    tag = f"scratch_{a.variant}"
-    torch.manual_seed(SEED)
-    rng = np.random.default_rng(SEED)
+    tag = f"scratch_{a.variant}{a.tag_suffix}" + (f"_s{a.seed}" if a.seed != SEED else "")
+    group = f"14_seed_{tag}" if a.seed != SEED else f"12_{tag}"
+    torch.manual_seed(a.seed)
+    rng = np.random.default_rng(a.seed)
     dev = "cuda"
     tok = tokenizer(a.scheme)
     rtr, ptr, ytr = arrays(a.scheme, a.scheme, "train", tok)
     rva, pva, yva = arrays(a.scheme, a.scheme, "val", tok)
-    model = (PairTransformer() if a.variant == "transformer_pair" else Net(a.variant)).to(dev)
+    model = (PairTransformer(d=a.tf_dim, layers=a.tf_layers, ff=a.tf_ff, drop=a.tf_drop)
+             if a.variant == "transformer_pair" else Net(a.variant)).to(dev)
     opt = torch.optim.Adam(model.parameters(), lr=a.lr)
     sched = torch.optim.lr_scheduler.ReduceLROnPlateau(opt, mode="max", factor=0.5, patience=0)
     n_params = sum(p.numel() for p in model.parameters())
     ckpt, state_p = CACHE / f"{tag}__{a.scheme}.pt", CACHE / f"{tag}__{a.scheme}__state.pt"
-    log = {"variant": a.variant, "scheme": a.scheme, "params": n_params, "evals": []}
+    log = {"variant": a.variant, "scheme": a.scheme, "seed": a.seed, "params": n_params, "evals": [],
+           "args": vars(a)}
     ep0, best, bad, t0 = 0, -1.0, 0, time.time()
     if state_p.exists():
         st = torch.load(state_p, map_location=dev, weights_only=False)
@@ -258,7 +267,7 @@ def main():
         r, p, y = (rva, pva, yva) if (ds, part) == (a.scheme, "val") else arrays(a.scheme, ds, part, tok)
         pr = predict(model, r, p, dev)
         df_ids = row_ids(load_frame(ds, part))
-        save_predictions(f"12_{tag}", ds, part, y, {f"{a.scheme}__{tag}": pr}, ids=df_ids)
+        save_predictions(group, ds, part, y, {f"{a.scheme}__{tag}": pr}, ids=df_ids)
         if part == "val":
             log["val_auc"] = roc_auc_score(y, pr)
             thr = select_threshold(y, pr)

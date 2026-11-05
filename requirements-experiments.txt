@@ -1,0 +1,16 @@
+# Steps 2-10 (modelling/, experiments/, notebooks/), on top of requirements.txt.
+# Versions are the ones the reported results were produced with (Python 3.12).
+scipy>=1.18
+scikit-learn>=1.9
+lightgbm>=4.7
+xgboost>=3.4
+interpret>=0.7.8        # EBM (steps 2, 4, 9)
+joblib>=1.6
+torch>=2.11             # from-scratch networks (steps 5, 9); CUDA build for GPU training
+tokenizers>=0.23        # byte-level BPE fitted on the training split
+nbformat>=5.11          # running the notebooks headless
+nbclient>=0.11
+ipykernel>=7.4
+
+# Pretrained reference only (step 6, not part of the submitted results)
+# transformers>=5.19

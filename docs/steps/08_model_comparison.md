@@ -39,4 +39,4 @@ Reddit-to-Reddit transfer holds up; Twitter is much harder for compliant models;
 
 ## Limitations and next steps
 
-One seed for compliant models; 84% author overlap between train and test; a possible trailing-punctuation artefact; VADER's status under the course rule needs confirming. The ablation plan (A1–A9) is in `docs/SUMMARY.md` section 11, starting with the cheap stacking ablations and the author-disjoint check.
+The checks in steps 9 and 10 settle most open questions: no model loses AUC on authors unseen in training (A9); seed variation is at most 0.0007 (step 10); every improvement holds on `sarc_temporal` (step 10). Still to state in the report: about 0.01 AUC depends on how Reddit replies end, a pattern that does not appear in human-annotated TweetEval (A8, step 10), and VADER's status under the course rule needs confirming.

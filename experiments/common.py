@@ -106,10 +106,22 @@ def save_predictions(group: str, dataset: str, partition: str, labels: np.ndarra
     return path
 
 
+#: Prediction groups written by ablations and robustness checks. They are not
+#: ensemble members or leaderboard entries, so they are only loaded on request.
+EXTRA_GROUP_PREFIXES = ("13_", "14_", "12_scratch_pair_noattn", "12_scratch_transformer")
+
+
+def is_extra_group(name: str) -> bool:
+    return name.startswith(EXTRA_GROUP_PREFIXES)
+
+
 def load_predictions(dataset: str, partition: str, scheme: str | None = None,
-                     include_new: bool = True, groups: list[str] | None = None) -> pd.DataFrame:
+                     include_new: bool = True, groups: list[str] | None = None,
+                     extra: list[str] | None = None) -> pd.DataFrame:
     """All model columns for one partition: committed baselines + experiment additions.
 
+    By default the ablation/robustness groups (`is_extra_group`) are skipped; `groups`
+    restricts loading to the listed groups, `extra` adds listed extra groups.
     Columns are renamed to drop the `<scheme>__` prefix so the same model has the
     same name on every evaluation set.
     """
@@ -120,7 +132,8 @@ def load_predictions(dataset: str, partition: str, scheme: str | None = None,
             frames.append(pd.read_parquet(p))
     if include_new:
         for p in sorted(PRED_DIR.glob(f"*/{dataset}__{partition}.parquet")):
-            if groups is None or p.parent.name in groups:
+            g = p.parent.name
+            if (groups is not None and g in groups) or (groups is None and not is_extra_group(g))                     or (extra is not None and g in extra):
                 frames.append(pd.read_parquet(p))
     base = frames[0][["row_position", "label"]].copy()
     for f in frames:

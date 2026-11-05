@@ -1,0 +1,137 @@
+{
+  "model": "ebm_full_s3245",
+  "scheme": "sarc_random",
+  "train_rows": 639638,
+  "n_features": 66,
+  "n_terms": 81,
+  "fit_seconds": 207,
+  "best_rounds_per_bag": [
+    53248,
+    65130,
+    51356,
+    44839,
+    48572,
+    53952,
+    67849,
+    59285,
+    4697,
+    3495,
+    4627,
+    5468,
+    4092,
+    3577,
+    5116,
+    3709
+  ],
+  "val_auc": 0.8185279793217428,
+  "p75_threshold": 0.4735374710281458,
+  "sarc_random": {
+    "roc_auc": 0.8229099771011067,
+    "pr_auc": 0.8353574720179333,
+    "accuracy": 0.7454200561777259,
+    "precision": 0.7715417221001826,
+    "recall": 0.7124857142857143,
+    "f1": 0.740838668468977,
+    "brier": 0.1713193755334725,
+    "p75_precision": 0.7565769225132272,
+    "p75_recall": 0.7374571428571428
+  },
+  "news_headlines": {
+    "roc_auc": 0.43460599258925225,
+    "pr_auc": 0.4256788034114155,
+    "accuracy": 0.4681700728212356,
+    "precision": 0.4069498069498069,
+    "recall": 0.2605042016806723,
+    "f1": 0.3176612417118746,
+    "brier": 0.30234255001700755
+  },
+  "figlang_reddit": {
+    "roc_auc": 0.7707207154615824,
+    "pr_auc": 0.7730552774713502,
+    "accuracy": 0.6970387243735763,
+    "precision": 0.7579425113464447,
+    "recall": 0.5738831615120275,
+    "f1": 0.6531942633637549,
+    "brier": 0.20194016812404325
+  },
+  "figlang_twitter": {
+    "roc_auc": 0.6359004771642809,
+    "pr_auc": 0.6248391915979135,
+    "accuracy": 0.5842565597667638,
+    "precision": 0.7142857142857143,
+    "recall": 0.2085889570552147,
+    "f1": 0.32288698955365625,
+    "brier": 0.2918883013982461
+  },
+  "tweeteval_irony": {
+    "roc_auc": 0.585662319835278,
+    "pr_auc": 0.4940448790637192,
+    "accuracy": 0.6128205128205129,
+    "precision": 0.520618556701031,
+    "recall": 0.3258064516129032,
+    "f1": 0.4007936507936508,
+    "brier": 0.25231473106991487
+  },
+  "top_terms": [
+    {
+      "term": "text_ngram_logodds",
+      "importance": 1.1538203583375355
+    },
+    {
+      "term": "parent_n_chars",
+      "importance": 0.23858514320879617
+    },
+    {
+      "term": "n_chars",
+      "importance": 0.11100918176045568
+    },
+    {
+      "term": "cue_opener",
+      "importance": 0.10266842956307262
+    },
+    {
+      "term": "parent_n_words",
+      "importance": 0.09553684182321737
+    },
+    {
+      "term": "len_ratio_to_parent",
+      "importance": 0.0845130396730397
+    },
+    {
+      "term": "par_n_words_log",
+      "importance": 0.0764278002261481
+    },
+    {
+      "term": "n_chars & text_ngram_logodds",
+      "importance": 0.05331071692120279
+    },
+    {
+      "term": "starts_with_interjection",
+      "importance": 0.048764043186592665
+    },
+    {
+      "term": "n_words",
+      "importance": 0.0456188695195263
+    },
+    {
+      "term": "rep_par_len_ratio_log",
+      "importance": 0.03976059103978817
+    },
+    {
+      "term": "parent_jaccard",
+      "importance": 0.039009956306592736
+    },
+    {
+      "term": "avg_word_len",
+      "importance": 0.034356791682923424
+    },
+    {
+      "term": "cue_mock_agree",
+      "importance": 0.02955962457054068
+    },
+    {
+      "term": "avg_word_len & text_ngram_logodds",
+      "importance": 0.028875443371166765
+    }
+  ]
+}
