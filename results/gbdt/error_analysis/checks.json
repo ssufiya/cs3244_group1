@@ -1,0 +1,37 @@
+[
+  {
+    "dataset": "sarc_random",
+    "max_prob_diff_vs_saved": 0.0,
+    "max_saabas_sum_error": 9.769962616701378e-15
+  },
+  {
+    "dataset": "sarc_subreddit",
+    "max_prob_diff_vs_saved": 0.0,
+    "max_saabas_sum_error": 1.0658141036401503e-14
+  },
+  {
+    "dataset": "sarc_temporal",
+    "max_prob_diff_vs_saved": 0.0,
+    "max_saabas_sum_error": 1.1546319456101628e-14
+  },
+  {
+    "dataset": "figlang_reddit",
+    "max_prob_diff_vs_saved": 0.0,
+    "max_saabas_sum_error": 7.105427357601002e-15
+  },
+  {
+    "dataset": "figlang_twitter",
+    "max_prob_diff_vs_saved": 0.0,
+    "max_saabas_sum_error": 4.884981308350689e-15
+  },
+  {
+    "dataset": "tweeteval_irony",
+    "max_prob_diff_vs_saved": 0.0,
+    "max_saabas_sum_error": 5.773159728050814e-15
+  },
+  {
+    "dataset": "news_headlines",
+    "max_prob_diff_vs_saved": 0.0,
+    "max_saabas_sum_error": 4.440892098500626e-15
+  }
+]
